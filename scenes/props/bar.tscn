@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://mad204i3t23"]
+
+[ext_resource type="PackedScene" uid="uid://bvslc8afkifgg" path="res://scenes/props/weight.tscn" id="1_o2i5h"]
+
+[node name="Bar" type="CSGCombiner3D"]
+use_collision = true
+
+[node name="Weight" parent="." instance=ExtResource("1_o2i5h")]
+
+[node name="Weight3" parent="." instance=ExtResource("1_o2i5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.212434)
+
+[node name="Weight2" parent="." instance=ExtResource("1_o2i5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.30803)
+
+[node name="Weight4" parent="." instance=ExtResource("1_o2i5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.50455)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.166381, 0, 0, 0, -4.37114e-08, -0.165095, 0, 1, -7.21655e-09, 0, 0, 1.63157)
+height = 4.40988

@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqkvi6thli1kq"]
+
+[ext_resource type="PackedScene" uid="uid://elr6gss3xqpl" path="res://scenes/environments/wall.tscn" id="1_chqgd"]
+[ext_resource type="PackedScene" uid="uid://csfi55oe8nmw3" path="res://scenes/environments/stairs.tscn" id="2_0kl6n"]
+
+[node name="Connector" type="CSGCombiner3D"]
+
+[node name="Walls" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Wall5" parent="Walls" instance=ExtResource("1_chqgd")]
+
+[node name="Wall6" parent="Walls" instance=ExtResource("1_chqgd")]
+transform = Transform3D(0.474513, 0, 0, 0, 4.60848, 0, 0, 0, 7.45272, 1.01969, 7.35212, 2.05474)
+size = Vector3(1, 1.58053, 1.99695)
+
+[node name="Wall8" parent="Walls/Wall6" instance=ExtResource("1_chqgd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.358938, 0.676239)
+operation = 2
+size = Vector3(1, 0.862652, 0.64447)
+
+[node name="Wall7" parent="Walls" instance=ExtResource("1_chqgd")]
+transform = Transform3D(0.474905, 0, 0, 0, 4.61228, 0, 0, 0, 7.45887, -2.19416, 4.9791, 0.315341)
+size = Vector3(1, 0.551528, 2.46097)
+
+[node name="Wall9" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(-7.60487, 2.47408e-08, -1.77663e-14, 0, -1.23704e-08, -4.64921, -6.64839e-07, -0.283002, 2.03223e-07, 2.05786, 9.29251, 9.36926)
+size = Vector3(0.297821, 1, 0.723354)
+
+[node name="Wall11" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(-7.60487, 2.47408e-08, -1.77663e-14, 0, -1.23704e-08, -4.64921, -6.64839e-07, -0.283002, 2.03223e-07, 0.509527, 2.7788, -8.79577)
+size = Vector3(0.705017, 1, 1.26452)
+
+[node name="Wall10" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(-7.60487, 2.47408e-08, -1.77663e-14, 0, -1.23704e-08, -4.64921, -6.64839e-07, -0.283002, 2.03223e-07, 0.587332, 1.08757, 9.36926)
+size = Vector3(0.684555, 1, 0.47447)
+
+[node name="Floors" type="CSGCombiner3D" parent="."]
+
+[node name="Floor3" type="CSGBox3D" parent="Floors"]
+transform = Transform3D(-7.61285, 0, 0.0545077, 0, 0.283318, 0, -0.0891602, 0, -4.65408, 0.964813, 3.6027, -6.62196)
+size = Vector3(0.802246, 1, 0.985352)
+
+[node name="Floor4" type="CSGBox3D" parent="Floors"]
+transform = Transform3D(-7.61337, 0, -4.069e-07, 0, 0.283318, 0, 6.65582e-07, 0, -4.6544, 2.4917, 7.84009, 7.26492)
+size = Vector3(0.401245, 1, 0.876831)
+
+[node name="Floor5" type="CSGBox3D" parent="Floors"]
+transform = Transform3D(-7.61337, 0, -4.069e-07, 0, 0.283318, 0, 6.65582e-07, 0, -4.6544, 0.882473, 0.160283, 0.26856)
+size = Vector3(0.802246, 1, 3.97296)
+
+[node name="Stairs" parent="." instance=ExtResource("2_0kl6n")]
+
+[node name="Stairs2" parent="." instance=ExtResource("2_0kl6n")]
+transform = Transform3D(0.99619, 0, 0, 0, 1.25053, 0, 0, 0, 0.720365, 2.53366, 3.23609, 0.756873)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bvslc8afkifgg"]
+
+[node name="Weight" type="CSGCombiner3D"]
+
+[node name="Weight" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -3.21586e-09, -1, 0, 0.0735703, -4.37114e-08, 0, 0, 0)
+sides = 20
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Weight"]
+transform = Transform3D(0.85764, 0, 0, 0, 0.36434, 0, 0, 0, 0.865549, 0, 1.03803, -3.33816e-09)
+operation = 2
+sides = 39
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Weight"]
+transform = Transform3D(0.85764, 0, 0, 0, 0.36434, 0, 0, 0, 0.865549, 0, -1.14784, 3.69128e-09)
+operation = 2
+sides = 39
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Weight"]
+transform = Transform3D(0.189751, 0, 0, 0, 1.98714, 7.10543e-15, 0, 4.44089e-16, 0.19415, 0, -0.404699, 1.30145e-09)
+operation = 2
+sides = 39

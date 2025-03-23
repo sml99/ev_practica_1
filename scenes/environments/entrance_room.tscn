@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6adx8bu5ocy7"]
+
+[ext_resource type="PackedScene" uid="uid://b0e8qke07btqh" path="res://scenes/props/office.tscn" id="1_b41rr"]
+[ext_resource type="PackedScene" uid="uid://blt22t5m5vnce" path="res://scenes/props/nfc_pass.tscn" id="2_sr3wu"]
+
+[node name="EntranceRoom" type="CSGCombiner3D"]
+
+[node name="Office" parent="." instance=ExtResource("1_b41rr")]
+
+[node name="Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(0.474513, 0, 0, 0, 4.60848, 0, 0, 0, 12.4196, -2.31143, 2.13244, -2.31733)
+size = Vector3(1, 1, 1.12061)
+
+[node name="Wall3" type="CSGBox3D" parent="."]
+transform = Transform3D(-2.07416e-08, 0, 12.4196, 0, 4.60848, 0, -0.474513, 0, -5.42878e-07, -8.38876, 2.13244, -9.2437)
+size = Vector3(1, 1, 1.03382)
+
+[node name="Wall4" type="CSGBox3D" parent="."]
+transform = Transform3D(-2.07416e-08, 0, 12.4196, 0, 4.60848, 0, -0.474513, 0, -5.42878e-07, -8.38876, 2.13244, 9.28795)
+size = Vector3(1, 1, 1.03382)
+
+[node name="Wall5" type="CSGBox3D" parent="Wall4"]
+transform = Transform3D(0.999986, 0, -1.13687e-12, 0, 0.999984, 0, -6.66134e-16, 0, 1, -0.0125828, -0.0482782, -0.00187635)
+operation = 2
+size = Vector3(1.88672, 0.903442, 0.263825)
+
+[node name="Wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.474513, 0, 0, 0, 4.60848, 0, 0, 0, 12.4196, -14.7774, 2.13244, 0.0454638)
+size = Vector3(1, 1, 1.53186)
+
+[node name="NfcPass" parent="." instance=ExtResource("2_sr3wu")]
+transform = Transform3D(0.0137353, 0, -0.999906, 0, 1.1953, 0, 0.999906, 0, 0.0137353, -2.54348, 1.346, 5.09738)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NfcPass"]
+transform = Transform3D(2.06842, 0, 1.86265e-09, 0, 1.9919, 0, -1.30385e-08, 0, 0.440789, 3.34643, -0.0445151, 0.0459688)
+
+[node name="MainFloor" type="CSGBox3D" parent="."]
+transform = Transform3D(18.3841, 0, 0, 0, 0.271754, 0, 0, 0, 18.9904, -8.59791, 0, 0)
+size = Vector3(0.698668, 1, 1)
+
+[node name="MainFloor2" type="CSGBox3D" parent="."]
+transform = Transform3D(18.3841, 0, 0, 0, 0.271754, 0, 0, 0, 18.9904, -8.55835, 4.33368, 0)
+size = Vector3(0.702972, 1, 1)

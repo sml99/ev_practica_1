@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3eb4bc738um0"]
+
+[ext_resource type="PackedScene" uid="uid://da8phfag4gjjj" path="res://scenes/props/dumbbell_rack.tscn" id="1_ie7tf"]
+[ext_resource type="PackedScene" uid="uid://dbjbyytf14bo" path="res://scenes/props/hand_weight.tscn" id="2_uqf36"]
+
+[node name="DumbbellRackFilled" type="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.21043, 0)
+
+[node name="DumbbellRack" parent="." instance=ExtResource("1_ie7tf")]
+transform = Transform3D(1.42157, 0, 0, 0, 1.00052, 0, 0, 0, 1.00052, -1.19658, 0.00481474, -0.470708)
+
+[node name="Row" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.0279633, 0, -0.728583, -0.192038, 0.733533, -0.00677258, 0.735403, 0.19155, 0.0259354, 3.47958, 2.80843, 0.0196458)
+
+[node name="HandWeight" parent="Row" instance=ExtResource("2_uqf36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 9.31323e-10, 1, 0, 0, 0)
+
+[node name="HandWeight2" parent="Row" instance=ExtResource("2_uqf36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 9.31323e-10, 1, 0.0474936, 0.0301895, 1.9231)
+
+[node name="HandWeight3" parent="Row" instance=ExtResource("2_uqf36")]
+transform = Transform3D(0.990831, 0.134671, -0.000323355, -0.135541, 0.990818, -0.00478012, -0.000351906, 0.00516871, 0.999987, -0.153457, 0.00795388, 4.3086)
+
+[node name="HandWeight4" parent="Row" instance=ExtResource("2_uqf36")]
+transform = Transform3D(0.990831, 0.134671, -0.000323355, -0.135541, 0.990818, -0.00478012, -0.000351906, 0.00516871, 0.999987, -0.102955, 0.0222356, 6.23181)
+
+[node name="Row2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.0279633, 0, -0.728583, -0.192038, 0.733533, -0.00677258, 0.735403, 0.19155, 0.0259354, 3.47958, -0.129947, 0.0196458)
+
+[node name="HandWeight" parent="Row2" instance=ExtResource("2_uqf36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 9.31323e-10, 1, 0, 0, 0)
+
+[node name="HandWeight2" parent="Row2" instance=ExtResource("2_uqf36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 9.31323e-10, 1, 0.0474936, 0.0301895, 1.9231)
+
+[node name="HandWeight3" parent="Row2" instance=ExtResource("2_uqf36")]
+transform = Transform3D(0.990831, 0.134671, -0.000323355, -0.135541, 0.990818, -0.00478012, -0.000351906, 0.00516871, 0.999987, -0.153457, 0.00795388, 4.3086)
+
+[node name="HandWeight4" parent="Row2" instance=ExtResource("2_uqf36")]
+transform = Transform3D(0.990831, 0.134671, -0.000323355, -0.135541, 0.990818, -0.00478012, -0.000351906, 0.00516871, 0.999987, -0.102955, 0.0222356, 6.23181)

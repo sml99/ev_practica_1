@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://blt22t5m5vnce"]
+
+[node name="NfcPass" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1.74944, 0, 0, 0, 1.45012, 0, 0, 0, 1, 0, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.0897449, 0, 0, 0, 0.0433526, 0, 0, 0, 0.738485, 0.00204749, 0.680495, 0.406852)
+size = Vector3(1, 1, 0.171997)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(-1.03795e-08, -0.493883, 0, 0.237455, -2.15883e-08, 0, 0, 0, 0.224436, 0.532291, 0.486664, 0.305734)
+radius = 0.269404
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.105763, -0.210988, 0.176595, 0.164368, 0.356435, 0, -0.134841, 0.268996, 0.138513, 0.229101, 0.164882, 0.0492044)
+radius = 0.269404
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.162763, 0, 0, 0, 1.3817, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(0.551385, 0, 0, 0, 0.144805, 0, 0, 0, 0.738485, 0.500885, 0.352221, 0.305734)
+operation = 2
+size = Vector3(1, 1, 0.171997)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(-0.162763, 0, -8.74228e-08, 0, 1.3817, 0, 1.42292e-08, 0, -1, 1.25399, 0, 0)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2"]
+transform = Transform3D(0.551385, 0, 2.84217e-14, 0, 0.144805, 0, 0, 0, 0.738485, 0.500885, 0.352221, -0.346693)
+operation = 2
+size = Vector3(1, 1, 0.171997)

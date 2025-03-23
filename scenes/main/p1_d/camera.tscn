@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkot7i0j4suuo"]
+
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_dpheg"]
+
+[node name="CameraPivot" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0104493)
+script = ExtResource("1_dpheg")
+
+[node name="PivotX" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999999, -0.00151844, 0, 0.00151844, 0.999999, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="PivotX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180538, 0.541051, 2.68021)

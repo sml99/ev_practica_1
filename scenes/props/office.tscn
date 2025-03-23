@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0e8qke07btqh"]
+
+[ext_resource type="PackedScene" uid="uid://1egf3deqn1i5" path="res://scenes/main/p1_a/chair.tscn" id="1_ew1du"]
+
+[node name="Office" type="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.35548, 0, 0)
+use_collision = true
+
+[node name="Computer" type="CSGCombiner3D" parent="."]
+transform = Transform3D(0.383032, 0, 0, 0, 0.595668, 0, 0, 0, 0.0735599, -7.19699, 2.26844, -4)
+
+[node name="Screen" type="CSGBox3D" parent="Computer"]
+transform = Transform3D(5.65334, 0, 0, 0, 2.24546, 0, 0, 0, 1, 0.514297, 1.61904, 0)
+
+[node name="Screen2" type="CSGBox3D" parent="Computer/Screen"]
+transform = Transform3D(0.94436, 0, 0, 0, 0.94422, 0, 0, 0, 1.3335, 0, 0, -0.975353)
+operation = 2
+
+[node name="Keyboard" type="CSGBox3D" parent="Computer"]
+transform = Transform3D(3.91924, 0, 0, 0, 0.146124, 0.150368, 0, -0.182166, 7.90931, 0, -0.43471, -12.0554)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Computer/Keyboard"]
+transform = Transform3D(0.901673, 0, 0, 0, 1.28448, -5.96046e-08, 0, -1.86265e-09, 0.87403, 0, 0.0634174, 0.00146055)
+
+[node name="Stand" type="CSGBox3D" parent="Computer"]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Computer/Stand"]
+transform = Transform3D(1.96838, 0, 0, 0, 0.260229, 0, 0, 0, 5.65957, 0, -0.550825, 0)
+
+[node name="Desk" type="CSGBox3D" parent="."]
+transform = Transform3D(5.20114, 0, 0, 0, 1.82871, 0, 0, 0, 3.51217, -6.16373, 1, -3.93654)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Desk"]
+transform = Transform3D(0.930705, 0, 0, 0, 1.04006, 0, 0, 0, 1, 0, -0.097212, -0.0244598)
+operation = 2
+
+[node name="Chairs" type="CSGCombiner3D" parent="."]
+
+[node name="Chair" parent="Chairs" instance=ExtResource("1_ew1du")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37142, 0.561516, -6.33478)
+
+[node name="Chair2" parent="Chairs" instance=ExtResource("1_ew1du")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29309, 0.561516, -6.33478)

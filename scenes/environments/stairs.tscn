@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://csfi55oe8nmw3"]
+
+[node name="Stairs" type="CSGCombiner3D"]
+transform = Transform3D(-0.996661, 0, 0.00844077, 0, 1, 0, -0.0116727, 0, -0.720706, -0.651794, 0, -0.699402)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 0.363522, -7.14558)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 0.608625, -6.18985)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 0.859697, -5.23413)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 1.1089, -4.26812)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 1.35998, -3.3124)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 1.60252, -2.34707)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 1.8536, -1.39135)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 2.1028, -0.425337)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 2.35388, 0.530381)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 2.6088, 1.49076)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 2.85135, 2.45609)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 3.10242, 3.41181)
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 3.35163, 4.37782)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="."]
+transform = Transform3D(2.8197, 0, 0, 0, 0.283318, 0, 0, 0, 0.781373, 0, 3.6027, 5.33354)
