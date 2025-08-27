@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0e8qke07btqh"]
 
-[ext_resource type="PackedScene" uid="uid://1egf3deqn1i5" path="res://scenes/main/p1_a/chair.tscn" id="1_ew1du"]
+[ext_resource type="PackedScene" uid="uid://1egf3deqn1i5" path="res://scenes/main/chair.tscn" id="1_ew1du"]
 
 [node name="Office" type="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.35548, 0, 0)

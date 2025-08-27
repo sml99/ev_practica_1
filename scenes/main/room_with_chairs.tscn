@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b8ba451bq1axr"]
 
-[ext_resource type="PackedScene" uid="uid://bl40ifodl4ulk" path="res://scenes/environments/floor.tscn" id="1_u82ce"]
-[ext_resource type="PackedScene" uid="uid://b0e8qke07btqh" path="res://scenes/props/office.tscn" id="2_ealo8"]
-[ext_resource type="PackedScene" uid="uid://1egf3deqn1i5" path="res://scenes/main/p1_a/chair.tscn" id="3_gkgro"]
-[ext_resource type="PackedScene" uid="uid://dkot7i0j4suuo" path="res://scenes/main/p1_d/camera.tscn" id="4_6ubic"]
+[ext_resource type="PackedScene" uid="uid://bl40ifodl4ulk" path="res://scenes/environments/floor.tscn" id="1_kapgl"]
+[ext_resource type="PackedScene" uid="uid://b0e8qke07btqh" path="res://scenes/props/office.tscn" id="2_mqtml"]
+[ext_resource type="PackedScene" uid="uid://1egf3deqn1i5" path="res://scenes/main/chair.tscn" id="3_48uie"]
+[ext_resource type="PackedScene" uid="uid://dkot7i0j4suuo" path="res://scenes/main/camera/camera.tscn" id="4_nisa6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hdkfc"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -27,38 +27,38 @@ environment = SubResource("Environment_mit4p")
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.496878, -0.801132, 0.333618, 0.0558216, 0.413141, 0.908955, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Floor" parent="." instance=ExtResource("1_u82ce")]
+[node name="Floor" parent="." instance=ExtResource("1_kapgl")]
 transform = Transform3D(1, 0, 0, 0, 1.06331, 0, 0, 0, 1, 0.125108, 0, -1.11439)
 
-[node name="Office" parent="." instance=ExtResource("2_ealo8")]
+[node name="Office" parent="." instance=ExtResource("2_mqtml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18875, -0.682931, 0.217281)
 
-[node name="Office2" parent="." instance=ExtResource("2_ealo8")]
+[node name="Office2" parent="." instance=ExtResource("2_mqtml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.88654, -0.682931, 0.217281)
 
-[node name="Chair" parent="." instance=ExtResource("3_gkgro")]
+[node name="Chair" parent="." instance=ExtResource("3_48uie")]
 transform = Transform3D(-0.99708, 0, 0.076371, 0, 1, 0, -0.076371, 0, -0.99708, -4.97448, -0.133671, -0.927056)
 
-[node name="Chair2" parent="." instance=ExtResource("3_gkgro")]
+[node name="Chair2" parent="." instance=ExtResource("3_48uie")]
 transform = Transform3D(-0.999905, 0, 0.0137875, 0, 1, 0, -0.0137875, 0, -0.999905, 1.19898, 0.159905, 1.5532)
 
-[node name="CameraPivot" parent="Chair2" instance=ExtResource("4_6ubic")]
+[node name="CameraPivot" parent="Chair2" instance=ExtResource("4_nisa6")]
 transform = Transform3D(-0.89026, 0, -0.455452, 0, 1, 0, 0.455452, 0, -0.89026, 0, 1.35076, 0.0104502)
 
-[node name="Chair3" parent="." instance=ExtResource("3_gkgro")]
+[node name="Chair3" parent="." instance=ExtResource("3_48uie")]
 transform = Transform3D(-0.999905, 0, 0.0137875, 0, 1, 0, -0.0137875, 0, -0.999905, -2.19168, -0.133671, 6.91541)
 
-[node name="Chair4" parent="." instance=ExtResource("3_gkgro")]
+[node name="Chair4" parent="." instance=ExtResource("3_48uie")]
 transform = Transform3D(-0.999905, 0, 0.0137875, 0, 1, 0, -0.0137875, 0, -0.999905, -0.892012, -0.133671, 6.91541)
 
-[node name="Chair5" parent="." instance=ExtResource("3_gkgro")]
+[node name="Chair5" parent="." instance=ExtResource("3_48uie")]
 transform = Transform3D(-0.999905, 0, 0.0137875, 0, 1, 0, -0.0137875, 0, -0.999905, 0.405102, -0.133671, 6.91541)
 
-[node name="Chair6" parent="." instance=ExtResource("3_gkgro")]
+[node name="Chair6" parent="." instance=ExtResource("3_48uie")]
 transform = Transform3D(-0.999905, 0, 0.0137875, 0, 1, 0, -0.0137875, 0, -0.999905, 1.60801, -0.133671, 6.91541)
 
-[node name="Chair7" parent="." instance=ExtResource("3_gkgro")]
+[node name="Chair7" parent="." instance=ExtResource("3_48uie")]
 transform = Transform3D(-0.999905, 0, 0.0137875, 0, 1, 0, -0.0137875, 0, -0.999905, 2.75513, -0.133671, 6.91541)
 
-[node name="Chair8" parent="." instance=ExtResource("3_gkgro")]
+[node name="Chair8" parent="." instance=ExtResource("3_48uie")]
 transform = Transform3D(-0.999905, 0, 0.0137875, 0, 1, 0, -0.0137875, 0, -0.999905, 3.96171, -0.133671, 6.91541)

@@ -29,10 +29,11 @@ transform = Transform3D(0.474513, 0, 0, 0, 4.60848, 0, 0, 0, 12.4196, -14.7774, 
 size = Vector3(1, 1, 1.53186)
 
 [node name="NfcPass" parent="." instance=ExtResource("2_sr3wu")]
-transform = Transform3D(0.0137353, 0, -0.999906, 0, 1.1953, 0, 0.999906, 0, 0.0137353, -2.54348, 1.346, 5.09738)
+transform = Transform3D(-0.544, 0, -8.21417e-08, 0, 0.65, 0, 8.21417e-08, 0, -0.544, -3.61004, 1.32531, 4.74726)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NfcPass"]
-transform = Transform3D(2.06842, 0, 1.86265e-09, 0, 1.9919, 0, -1.30385e-08, 0, 0.440789, 3.34643, -0.0445151, 0.0459688)
+transform = Transform3D(-9.04135e-08, 0, 0.440781, 0, 1.9919, 0, -2.06842, 0, -1.92671e-08, 2.35066, 0.14101, -5.6318)
+size = Vector3(2.26746, 1.98608, 0.537903)
 
 [node name="MainFloor" type="CSGBox3D" parent="."]
 transform = Transform3D(18.3841, 0, 0, 0, 0.271754, 0, 0, 0, 18.9904, -8.59791, 0, 0)
