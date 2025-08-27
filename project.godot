@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="practica_1"
-run/main_scene="res://scenes/main/room_with_chairs.tscn"
+run/main_scene="res://scenes/main/gym.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
