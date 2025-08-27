@@ -42,3 +42,7 @@ size = Vector3(0.698668, 1, 1)
 [node name="MainFloor2" type="CSGBox3D" parent="."]
 transform = Transform3D(18.3841, 0, 0, 0, 0.271754, 0, 0, 0, 18.9904, -8.55835, 4.33368, 0)
 size = Vector3(0.702972, 1, 1)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.00029, 1.79532, 7.79348)
+text = "Press SPACE to open door"
