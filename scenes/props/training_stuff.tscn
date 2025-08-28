@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpgaks0gqnou5"]
+[gd_scene load_steps=8 format=3 uid="uid://bpgaks0gqnou5"]
 
 [ext_resource type="PackedScene" uid="uid://cerr5es2sq1bs" path="res://scenes/props/bench.tscn" id="2_8aey2"]
 [ext_resource type="PackedScene" uid="uid://dk0fhm7tau01u" path="res://scenes/props/weight_lift_machine.tscn" id="3_41ctw"]
 [ext_resource type="PackedScene" uid="uid://mad204i3t23" path="res://scenes/props/bar.tscn" id="4_6hhst"]
 [ext_resource type="PackedScene" uid="uid://bvslc8afkifgg" path="res://scenes/props/weight.tscn" id="5_te7mn"]
+[ext_resource type="Material" uid="uid://bv2nrtjw35gj8" path="res://materiales/gym_floor.tres" id="6_7f817"]
 [ext_resource type="PackedScene" uid="uid://72pagwv8hsud" path="res://blender/treadmill.glb" id="6_i02m3"]
 [ext_resource type="PackedScene" uid="uid://d3eb4bc738um0" path="res://scenes/props/dumbbell_rack_filled.tscn" id="6_pi6qa"]
 
@@ -56,14 +57,15 @@ transform = Transform3D(1, 0, 0, 0, 0.0445609, -0.999007, 0, 0.999007, 0.0445609
 use_collision = true
 
 [node name="DumbbellRackFilled" parent="." instance=ExtResource("6_pi6qa")]
-transform = Transform3D(-3.67818e-08, 0, -0.900652, 0, 0.804944, 0, 0.841469, 0, -3.93687e-08, 12.7645, 2.36955, -5.39831)
+transform = Transform3D(-3.67818e-08, 0, -0.900652, 0, 0.804944, 0, 0.841469, 0, -3.93687e-08, 11.8067, 2.36955, 2.52925)
 
 [node name="DumbbellRackFilled2" parent="." instance=ExtResource("6_pi6qa")]
-transform = Transform3D(-3.67818e-08, 0, -0.900652, 0, 0.804944, 0, 0.841469, 0, -3.93687e-08, 12.7645, 2.36955, 2.95435)
+transform = Transform3D(-0.841469, 0, -7.87375e-08, 0, 0.804944, 0, 7.35635e-08, 0, -0.900652, 6.99067, 2.36955, 6.13135)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(0.77086, 0, 0, 0, 0.887218, 0, 0, 0, 0.887218, -1.18058, -0.4995, 0.112302)
 size = Vector3(40, 0.001, 19.0911)
+material = ExtResource("6_7f817")
 
 [node name="treadmill" parent="." instance=ExtResource("6_i02m3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53988, -0.437961, -5.37421)

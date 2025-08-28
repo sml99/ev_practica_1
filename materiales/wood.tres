@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ci3mc7wyrjj3w"]
+
+[ext_resource type="Texture2D" uid="uid://dbw1p2foinwpi" path="res://materiales/oak_veneer_01.webp" id="1_ma7rq"]
+
+[resource]
+albedo_color = Color(0.108521, 0.0265771, 0.00684911, 1)
+normal_enabled = true
+normal_texture = ExtResource("1_ma7rq")

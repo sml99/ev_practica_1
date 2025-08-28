@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqkvi6thli1kq"]
+[gd_scene load_steps=5 format=3 uid="uid://cqkvi6thli1kq"]
 
 [ext_resource type="PackedScene" uid="uid://elr6gss3xqpl" path="res://scenes/environments/wall.tscn" id="1_chqgd"]
 [ext_resource type="PackedScene" uid="uid://csfi55oe8nmw3" path="res://scenes/environments/stairs.tscn" id="2_0kl6n"]
+[ext_resource type="Material" uid="uid://untmyn22wgy4" path="res://materiales/office_walls.tres" id="2_xeqbr"]
+[ext_resource type="Material" uid="uid://c0g6lhw71ihdk" path="res://materiales/reception_floor.tres" id="3_0gvfd"]
 
 [node name="Connector" type="CSGCombiner3D"]
 
@@ -9,45 +11,57 @@
 use_collision = true
 
 [node name="Wall5" parent="Walls" instance=ExtResource("1_chqgd")]
+transform = Transform3D(0.474513, 0, 0, 0, 4.60848, 0, 0, 0, 7.45272, 1.01969, 1.89532, -0.369305)
+size = Vector3(1, 0.797302, 1.34644)
+material = ExtResource("2_xeqbr")
 
 [node name="Wall6" parent="Walls" instance=ExtResource("1_chqgd")]
 transform = Transform3D(0.474513, 0, 0, 0, 4.60848, 0, 0, 0, 7.45272, 1.01969, 7.35212, 2.05474)
 size = Vector3(1, 1.58053, 1.99695)
+material = ExtResource("2_xeqbr")
 
 [node name="Wall8" parent="Walls/Wall6" instance=ExtResource("1_chqgd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.358938, 0.676239)
 operation = 2
 size = Vector3(1, 0.862652, 0.64447)
+material = ExtResource("2_xeqbr")
 
 [node name="Wall7" parent="Walls" instance=ExtResource("1_chqgd")]
 transform = Transform3D(0.474905, 0, 0, 0, 4.61228, 0, 0, 0, 7.45887, -2.19416, 4.9791, 0.315341)
 size = Vector3(1, 0.551528, 2.46097)
+material = ExtResource("2_xeqbr")
 
 [node name="Wall9" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(-7.60487, 2.47408e-08, -1.77663e-14, 0, -1.23704e-08, -4.64921, -6.64839e-07, -0.283002, 2.03223e-07, 2.46638, 9.35036, 9.36926)
 size = Vector3(0.405258, 1, 0.698469)
+material = ExtResource("2_xeqbr")
 
 [node name="Wall11" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(-7.60487, 2.47408e-08, -1.77663e-14, 0, -1.23704e-08, -4.64921, -6.64839e-07, -0.283002, 2.03223e-07, 0.929248, 2.86257, -8.79577)
 size = Vector3(0.815399, 1, 1.22848)
+material = ExtResource("2_xeqbr")
 
 [node name="Wall10" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(-7.60487, 2.47408e-08, -1.77663e-14, 0, -1.23704e-08, -4.64921, -6.64839e-07, -0.283002, 2.03223e-07, 0.873272, 1.09535, 9.36926)
 size = Vector3(0.810543, 1, 0.471122)
+material = ExtResource("2_xeqbr")
 
 [node name="Floors" type="CSGCombiner3D" parent="."]
 
 [node name="Floor3" type="CSGBox3D" parent="Floors"]
 transform = Transform3D(-7.61285, 0, 0.0545077, 0, 0.283318, 0, -0.0891602, 0, -4.65408, 0.964813, 3.6027, -6.62196)
 size = Vector3(0.802246, 1, 0.985352)
+material = ExtResource("3_0gvfd")
 
 [node name="Floor4" type="CSGBox3D" parent="Floors"]
 transform = Transform3D(-7.61337, 0, -4.069e-07, 0, 0.283318, 0, 6.65582e-07, 0, -4.6544, 2.4917, 7.84009, 7.08495)
 size = Vector3(0.401245, 1, 0.954163)
+material = ExtResource("3_0gvfd")
 
 [node name="Floor5" type="CSGBox3D" parent="Floors"]
 transform = Transform3D(-7.61337, 0, -4.069e-07, 0, 0.283318, 0, 6.65582e-07, 0, -4.6544, 0.882473, 0.160283, 0.26856)
 size = Vector3(0.802246, 1, 3.97296)
+material = ExtResource("3_0gvfd")
 
 [node name="Stairs" parent="." instance=ExtResource("2_0kl6n")]
 

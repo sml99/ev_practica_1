@@ -1,43 +1,80 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0e8qke07btqh"]
+[gd_scene load_steps=7 format=3 uid="uid://b0e8qke07btqh"]
 
-[ext_resource type="PackedScene" uid="uid://1egf3deqn1i5" path="res://scenes/props/chair.tscn" id="1_ew1du"]
+[ext_resource type="Material" uid="uid://bu0o5b7uttbhl" path="res://materiales/screen.tres" id="1_t3v1i"]
+[ext_resource type="PackedScene" uid="uid://uuq50nmkcvkk" path="res://scenes/props/chair_enhanced.tscn" id="1_y0t4k"]
+[ext_resource type="Material" uid="uid://coc7oav5pkqwt" path="res://materiales/fabric_seat.tres" id="2_yg3et"]
+[ext_resource type="Material" uid="uid://c8o03xevbakh1" path="res://materiales/fabric_backrest.tres" id="3_jhntn"]
+[ext_resource type="Material" uid="uid://ci3mc7wyrjj3w" path="res://materiales/wood.tres" id="4_ci2u2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id7sx"]
+albedo_color = Color(0.517647, 0.141176, 0.0470588, 1)
+metallic = 0.5
+roughness = 0.7
 
 [node name="Office" type="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.35548, 0, 0)
 use_collision = true
 
 [node name="Computer" type="CSGCombiner3D" parent="."]
-transform = Transform3D(0.383032, 0, 0, 0, 0.595668, 0, 0, 0, 0.0735599, -7.19699, 2.26844, -4)
+transform = Transform3D(0.383032, 0, 0, 0, 0.595668, 0, 0, 0, 0.0735599, -6.12047, 2.26844, -4.33912)
 
 [node name="Screen" type="CSGBox3D" parent="Computer"]
-transform = Transform3D(5.65334, 0, 0, 0, 2.24546, 0, 0, 0, 1, 0.514297, 1.61904, 0)
+transform = Transform3D(10.5915, 0, 0, 0, 2.24546, 0, 0, 0, 1, 0.046051, 1.61904, 0)
+material = ExtResource("1_t3v1i")
 
 [node name="Screen2" type="CSGBox3D" parent="Computer/Screen"]
 transform = Transform3D(0.94436, 0, 0, 0, 0.94422, 0, 0, 0, 1.3335, 0, 0, -0.975353)
 operation = 2
+material = ExtResource("1_t3v1i")
 
 [node name="Keyboard" type="CSGBox3D" parent="Computer"]
 transform = Transform3D(3.91924, 0, 0, 0, 0.146124, 0.150368, 0, -0.182166, 7.90931, 0, -0.43471, -12.0554)
+material = ExtResource("2_yg3et")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Computer/Keyboard"]
 transform = Transform3D(0.901673, 0, 0, 0, 1.28448, -5.96046e-08, 0, -1.86265e-09, 0.87403, 0, 0.0634174, 0.00146055)
+material = ExtResource("3_jhntn")
 
 [node name="Stand" type="CSGBox3D" parent="Computer"]
+material = ExtResource("1_t3v1i")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Computer/Stand"]
 transform = Transform3D(1.96838, 0, 0, 0, 0.260229, 0, 0, 0, 5.65957, 0, -0.550825, 0)
+material = ExtResource("1_t3v1i")
 
 [node name="Desk" type="CSGBox3D" parent="."]
-transform = Transform3D(5.20114, 0, 0, 0, 1.82871, 0, 0, 0, 3.51217, -6.16373, 1, -3.93654)
+transform = Transform3D(5.20114, 0, 0, 0, 1.82871, 0, 0, 0, 3.51217, -6.11293, 1, -4.27566)
+size = Vector3(1.32966, 1, 1)
+material = ExtResource("4_ci2u2")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Desk"]
-transform = Transform3D(0.930705, 0, 0, 0, 1.04006, 0, 0, 0, 1, 0, -0.097212, -0.0244598)
+transform = Transform3D(0.930705, 0, 0, 0, 1.04006, 0, 0, 0, 1, -0.00625753, -0.0383658, -0.049819)
 operation = 2
+size = Vector3(1.37869, 0.967651, 1.02563)
+material = ExtResource("4_ci2u2")
 
 [node name="Chairs" type="CSGCombiner3D" parent="."]
 
-[node name="Chair" parent="Chairs" instance=ExtResource("1_ew1du")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37142, 0.561516, -6.33478)
+[node name="chair" parent="." instance=ExtResource("1_y0t4k")]
+transform = Transform3D(0.851719, 0, 0, 0, 0.851719, 0, 0, 0, 0.851719, -5.9504, 0.874402, -7.11368)
 
-[node name="Chair2" parent="Chairs" instance=ExtResource("1_ew1du")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29309, 0.561516, -6.33478)
+[node name="chair2" parent="." instance=ExtResource("1_y0t4k")]
+transform = Transform3D(0.0818706, 0, -0.847775, 0, 0.851719, 0, 0.847775, 0, 0.0818706, -3.60706, 0.874402, -0.688576)
+
+[node name="chair3" parent="." instance=ExtResource("1_y0t4k")]
+transform = Transform3D(-0.374865, 0, 0.764789, 0, 0.851719, 0, -0.764789, 0, -0.374865, -7.88336, 0.874402, -0.688576)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.36593, 2.16678, -3.33912)
+radius = 0.18
+height = 0.5
+sides = 12
+material = SubResource("StandardMaterial3D_id7sx")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0215762, 0)
+operation = 2
+radius = 0.15
+height = 0.5
+sides = 12
+material = ExtResource("4_ci2u2")

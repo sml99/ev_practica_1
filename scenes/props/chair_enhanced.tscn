@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://uuq50nmkcvkk"]
+
+[ext_resource type="PackedScene" uid="uid://b2ygapllm28i1" path="res://blender/chair.glb" id="1_mey7x"]
+[ext_resource type="Material" uid="uid://c8o03xevbakh1" path="res://materiales/fabric_backrest.tres" id="2_fmek0"]
+[ext_resource type="Material" uid="uid://coc7oav5pkqwt" path="res://materiales/fabric_seat.tres" id="3_h601i"]
+[ext_resource type="Material" uid="uid://bt1i7m20c7k41" path="res://materiales/sub_cushion.tres" id="4_07cyu"]
+[ext_resource type="Material" uid="uid://l6ppaf0euf4" path="res://materiales/plastic_legs.tres" id="4_ig0a1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kje2h"]
+albedo_color = Color(0.101961, 0.101961, 0.101961, 1)
+roughness = 0.8
+
+[node name="chair" instance=ExtResource("1_mey7x")]
+
+[node name="Cube_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_fmek0")
+
+[node name="Cube" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_h601i")
+
+[node name="Cube_002" parent="." index="2"]
+surface_material_override/0 = ExtResource("4_07cyu")
+
+[node name="Cylinder" parent="." index="3"]
+surface_material_override/0 = ExtResource("4_ig0a1")
+
+[node name="Cube_003" parent="." index="4"]
+surface_material_override/0 = ExtResource("4_ig0a1")
+
+[node name="Cylinder_002" parent="." index="5"]
+surface_material_override/0 = ExtResource("4_ig0a1")
+
+[node name="Cylinder_001" parent="." index="7"]
+surface_material_override/0 = ExtResource("4_ig0a1")
+
+[node name="Cylinder_003" parent="." index="8"]
+surface_material_override/0 = ExtResource("4_ig0a1")
+
+[node name="Cylinder_004" parent="." index="9"]
+surface_material_override/0 = ExtResource("4_ig0a1")
+
+[node name="Cylinder_005" parent="." index="10"]
+surface_material_override/0 = ExtResource("4_ig0a1")
+
+[node name="Cube_004" parent="." index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_kje2h")

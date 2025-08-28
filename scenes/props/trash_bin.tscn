@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://frhag2t175su"]
+
+[ext_resource type="PackedScene" uid="uid://b4cdqqkvlpfow" path="res://blender/trash_bin.glb" id="1_xtv53"]
+[ext_resource type="Texture2D" uid="uid://cxjph62oeid81" path="res://materiales/fabric_texture.jpg" id="2_e5d24"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eick0"]
+metallic = 0.16
+normal_enabled = true
+normal_texture = ExtResource("2_e5d24")
+
+[node name="trash_bin" instance=ExtResource("1_xtv53")]
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform3D(0.755, 0, 0, 0, 0.755, 0, 0, 0, 0.755, 0, -0.177985, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_eick0")

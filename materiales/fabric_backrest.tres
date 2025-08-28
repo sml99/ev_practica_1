@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c8o03xevbakh1"]
+
+[ext_resource type="Texture2D" uid="uid://cxjph62oeid81" path="res://materiales/fabric_texture.jpg" id="1_u5d7x"]
+
+[resource]
+albedo_color = Color(0.239216, 0.239216, 0.239216, 1)
+roughness = 0.75
+normal_enabled = true
+normal_texture = ExtResource("1_u5d7x")
