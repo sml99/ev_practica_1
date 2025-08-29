@@ -1,11 +1,11 @@
 extends Node3D
 
-@onready var animation_player = $"../AnimationPlayer"
+@onready var animation_player = $AnimationPlayer
 
 var door_open = false
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_accept"): 
+	if Input.is_action_just_pressed("pass_nft"): 
 		if not door_open:
 			_handle_door()
 

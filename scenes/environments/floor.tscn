@@ -5,6 +5,7 @@
 
 [node name="Floor" type="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1.06331, 0, 0, 0, 1, 0, 0, 0)
+use_collision = true
 
 [node name="MainFloor" type="CSGBox3D" parent="."]
 transform = Transform3D(2.79539, 0, 0, 0, 0.281798, 0, 0, 0, 0.560156, 0, -0.719315, 0)

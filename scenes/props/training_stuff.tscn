@@ -5,76 +5,80 @@
 [ext_resource type="PackedScene" uid="uid://mad204i3t23" path="res://scenes/props/bar.tscn" id="4_6hhst"]
 [ext_resource type="PackedScene" uid="uid://bvslc8afkifgg" path="res://scenes/props/weight.tscn" id="5_te7mn"]
 [ext_resource type="Material" uid="uid://bv2nrtjw35gj8" path="res://materiales/gym_floor.tres" id="6_7f817"]
-[ext_resource type="PackedScene" uid="uid://72pagwv8hsud" path="res://blender/treadmill.glb" id="6_i02m3"]
 [ext_resource type="PackedScene" uid="uid://d3eb4bc738um0" path="res://scenes/props/dumbbell_rack_filled.tscn" id="6_pi6qa"]
+[ext_resource type="PackedScene" uid="uid://8p8bvwn3rjvx" path="res://scenes/props/treadmill.tscn" id="7_qhult"]
 
 [node name="TrainingStuff" type="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.289064, 0)
+use_collision = true
 
 [node name="Bench" parent="." instance=ExtResource("2_8aey2")]
-transform = Transform3D(-5.85146e-08, 0, 1.90849, 0, 1.19086, 0, -1.33866, 0, -8.34226e-08, -2.98071, -0.302489, 7.28339)
+transform = Transform3D(-1.40751e-08, 0, 0.322, 0, 0.3, 0, -0.322, 0, -1.40751e-08, -2.98071, -0.403565, 7.28339)
 
 [node name="Bench2" parent="." instance=ExtResource("2_8aey2")]
-transform = Transform3D(-5.85146e-08, 0, 1.90849, 0, 1.19086, 0, -1.33866, 0, -8.34226e-08, -7.68961, -0.302489, 7.28339)
+transform = Transform3D(-1.40751e-08, 0, 0.322, 0, 0.3, 0, -0.322, 0, -1.40751e-08, -7.68961, -0.403565, 7.28339)
 
 [node name="Bench3" parent="." instance=ExtResource("2_8aey2")]
-transform = Transform3D(-5.85146e-08, 0, 1.90849, 0, 1.19086, 0, -1.33866, 0, -8.34226e-08, -11.9046, -0.302489, 7.28339)
+transform = Transform3D(-1.40751e-08, 0, 0.322, 0, 0.3, 0, -0.322, 0, -1.40751e-08, -11.9046, -0.403565, 7.28339)
 
 [node name="Bench4" parent="." instance=ExtResource("2_8aey2")]
-transform = Transform3D(-5.85146e-08, 0, -1.90849, 0, 1.19086, 0, 1.33866, 0, -8.34226e-08, 6.02089, -0.222866, -4.49745)
+transform = Transform3D(-1.40751e-08, 0, -0.322, 0, 0.3, 0, 0.322, 0, -1.40751e-08, 8.53041, -0.432741, -4.49745)
 
 [node name="WeightLiftMachine" parent="." instance=ExtResource("3_41ctw")]
-transform = Transform3D(0.996403, 0, 0, 0, 0.926898, 0, 0, 0, 0.996403, 4.38479, -0.421016, -5.46709)
+transform = Transform3D(1.10048, 0, 0, 0, 0.924558, 0, 0, 0, 1.171, 6.70602, -0.421016, -4.29626)
+
+[node name="Bench5" parent="." instance=ExtResource("2_8aey2")]
+transform = Transform3D(-1.40751e-08, 0, -0.322, 0, 0.3, 0, 0.322, 0, -1.40751e-08, 2.88594, -0.432741, -4.49745)
+
+[node name="WeightLiftMachine2" parent="." instance=ExtResource("3_41ctw")]
+transform = Transform3D(1.10048, 0, 0, 0, 0.924558, 0, 0, 0, 1.171, 1.41981, -0.421016, -4.12783)
 
 [node name="Bar" parent="." instance=ExtResource("4_6hhst")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56711, 0.052359, 4.20986)
+
+[node name="Bar3" parent="." instance=ExtResource("4_6hhst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.327468, 0.052359, 4.20986)
 
 [node name="Bar2" parent="." instance=ExtResource("4_6hhst")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.563, 0.052359, 4.22465)
 
 [node name="Weight" parent="." instance=ExtResource("5_te7mn")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.42169, -0.0600255, 7.71796)
-use_collision = true
 
 [node name="Weight3" parent="." instance=ExtResource("5_te7mn")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.42169, -0.201887, 7.71796)
-use_collision = true
 
 [node name="Weight2" parent="." instance=ExtResource("5_te7mn")]
-transform = Transform3D(1, 0, 0, 0, 0.819122, -0.573619, 0, 0.573619, 0.819122, 2.42169, -0.0582322, 7.14324)
-use_collision = true
+transform = Transform3D(1, 0, 0, 0, 0.819122, -0.573619, 0, 0.573619, 0.819122, 2.43321, 0.0173649, 7.15836)
 
 [node name="Weight4" parent="." instance=ExtResource("5_te7mn")]
 transform = Transform3D(1, 0, 0, 0, 0.0445609, -0.999007, 0, 0.999007, 0.0445609, 2.42169, -0.13273, 7.70583)
-use_collision = true
 
 [node name="Weight6" parent="." instance=ExtResource("5_te7mn")]
 transform = Transform3D(1, 0, 0, 0, 0.0445609, -0.999007, 0, 0.999007, 0.0445609, 2.42169, -0.294225, 7.70583)
-use_collision = true
 
 [node name="Weight5" parent="." instance=ExtResource("5_te7mn")]
 transform = Transform3D(1, 0, 0, 0, 0.0445609, -0.999007, 0, 0.999007, 0.0445609, 2.42169, -0.380607, 7.70583)
-use_collision = true
 
 [node name="DumbbellRackFilled" parent="." instance=ExtResource("6_pi6qa")]
-transform = Transform3D(-3.67818e-08, 0, -0.900652, 0, 0.804944, 0, 0.841469, 0, -3.93687e-08, 11.8067, 2.36955, 2.52925)
+transform = Transform3D(-0.473, 0, -4.42359e-08, 0, 0.452, 0, 4.1351e-08, 0, -0.506, 11.8067, 1.12115, 5.85931)
 
 [node name="DumbbellRackFilled2" parent="." instance=ExtResource("6_pi6qa")]
-transform = Transform3D(-0.841469, 0, -7.87375e-08, 0, 0.804944, 0, 7.35635e-08, 0, -0.900652, 6.99067, 2.36955, 6.13135)
+transform = Transform3D(-0.473, 0, -7.64039e-08, 0, 0.452, 0, 7.1421e-08, 0, -0.506, 6.99067, 1.12115, 6.13135)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(0.77086, 0, 0, 0, 0.887218, 0, 0, 0, 0.887218, -1.18058, -0.4995, 0.112302)
 size = Vector3(40, 0.001, 19.0911)
 material = ExtResource("6_7f817")
 
-[node name="treadmill" parent="." instance=ExtResource("6_i02m3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53988, -0.437961, -5.37421)
+[node name="treadmill" parent="." instance=ExtResource("7_qhult")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14.2823, -0.499056, -4.85519)
 
-[node name="treadmill2" parent="." instance=ExtResource("6_i02m3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.62725, -0.437961, -5.37421)
+[node name="treadmill2" parent="." instance=ExtResource("7_qhult")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.9918, -0.499056, -4.85519)
 
-[node name="treadmill3" parent="." instance=ExtResource("6_i02m3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.59889, -0.437961, -5.37421)
+[node name="treadmill3" parent="." instance=ExtResource("7_qhult")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.74312, -0.499056, -4.85519)
 
-[node name="treadmill4" parent="." instance=ExtResource("6_i02m3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5069, -0.437961, -5.37421)
+[node name="treadmill4" parent="." instance=ExtResource("7_qhult")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.85369, -0.499056, -4.85519)

@@ -1,17 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://blt22t5m5vnce"]
+[gd_scene load_steps=5 format=3 uid="uid://blt22t5m5vnce"]
 
 [ext_resource type="PackedScene" uid="uid://cl8nygls2kcml" path="res://blender/nfc_pass.glb" id="1_w8hxk"]
 [ext_resource type="Script" path="res://scripts/open_door.gd" id="2_t828t"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_055yc"]
-size = Vector3(1.36838, 1.39188, 1.09814)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nepn8"]
+points = PackedVector3Array(0.636672, 1.13409, 0.7683, -1, -0.998758, -1, 0.9894, -0.998758, -1, 0.990545, -1, 0.990545, -1, -0.998758, 0.9894, -1, 1.15966, -1, 0.973484, 1.00954, -0.984084, -1, 1.15966, 0.9894, 0.973483, 1.00954, 0.973483, 0.607843, 1.14113, -0.982921, 0.607842, 1.14113, 0.97232, 0.643003, 1.14448, -0.753122, 0.83917, 1.07388, -0.750162, 0.834246, 1.06808, 0.7683)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yfj4a"]
+points = PackedVector3Array(0.0584636, 0.166546, -9.79749, -0.0534879, -0.504988, -7.89263, 0.0584636, -0.504988, -7.89263, -0.0534879, 0.614527, -0.0577126, 0.0584636, -0.504988, -0.0577126, 0.0584636, 0.614527, -0.0577126, -0.0534879, 0.614527, -7.89263, -0.0534879, -0.504988, -0.0577126, 0.0584636, 0.614527, -7.89263, -0.0534879, -0.113114, -9.74124, -0.0534879, 0.446424, -9.18065, 0.0584636, -0.336995, -9.18065, 0.0584636, 0.502422, -8.90131, -0.0534879, -0.392993, -8.90131, -0.0534879, 0.166546, -9.79749, 0.0584636, -0.113114, -9.74124, 0.0584636, 0.334429, -9.51719, 0.0584636, -0.44899, -8.50947, -0.0534879, -0.225109, -9.51719, -0.0534879, 0.558419, -8.50947, -0.0534879, 0.334429, -9.51719, 0.0584636, -0.225109, -9.51719, -0.0534879, -0.44899, -8.50947, 0.0584636, 0.558419, -8.50947, 0.0584636, 0.446424, -9.18065, -0.0534879, -0.336995, -9.18065, 0.0584636, -0.392993, -8.90131, -0.0534879, 0.502422, -8.90131)
 
 [node name="nfc_pass" instance=ExtResource("1_w8hxk")]
-
-[node name="Area3D" type="Area3D" parent="." index="3"]
-transform = Transform3D(-4.10299e-07, 0, 0.339815, 0, 2.21578, 0, -2.5184, 0, -5.53629e-08, 1.93125, -0.135045, 0.100246)
 script = ExtResource("2_t828t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
-transform = Transform3D(1, 0, -4.44089e-14, 0, 1, 0, 0, 0, 1, 0.612053, 0.0658417, 0.944431)
-shape = SubResource("BoxShape3D_055yc")
+[node name="StaticBody3D" type="StaticBody3D" parent="MainFrame" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MainFrame/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_nepn8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_yfj4a")

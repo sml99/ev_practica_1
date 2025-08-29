@@ -1,10 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0e8qke07btqh"]
+[gd_scene load_steps=8 format=3 uid="uid://b0e8qke07btqh"]
 
 [ext_resource type="Material" uid="uid://bu0o5b7uttbhl" path="res://materiales/screen.tres" id="1_t3v1i"]
 [ext_resource type="PackedScene" uid="uid://uuq50nmkcvkk" path="res://scenes/props/chair_enhanced.tscn" id="1_y0t4k"]
 [ext_resource type="Material" uid="uid://coc7oav5pkqwt" path="res://materiales/fabric_seat.tres" id="2_yg3et"]
 [ext_resource type="Material" uid="uid://c8o03xevbakh1" path="res://materiales/fabric_backrest.tres" id="3_jhntn"]
 [ext_resource type="Material" uid="uid://ci3mc7wyrjj3w" path="res://materiales/wood.tres" id="4_ci2u2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eotun"]
+radius = 1.3263
+height = 3.97102
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id7sx"]
 albedo_color = Color(0.517647, 0.141176, 0.0470588, 1)
@@ -58,11 +62,23 @@ material = ExtResource("4_ci2u2")
 [node name="chair" parent="." instance=ExtResource("1_y0t4k")]
 transform = Transform3D(0.851719, 0, 0, 0, 0.851719, 0, 0, 0, 0.851719, -5.9504, 0.874402, -7.11368)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11838, -0.075913)
+shape = SubResource("CapsuleShape3D_eotun")
+
 [node name="chair2" parent="." instance=ExtResource("1_y0t4k")]
 transform = Transform3D(0.0818706, 0, -0.847775, 0, 0.851719, 0, 0.847775, 0, 0.0818706, -3.60706, 0.874402, -0.688576)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chair2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11838, -0.075913)
+shape = SubResource("CapsuleShape3D_eotun")
+
 [node name="chair3" parent="." instance=ExtResource("1_y0t4k")]
 transform = Transform3D(-0.374865, 0, 0.764789, 0, 0.851719, 0, -0.764789, 0, -0.374865, -7.88336, 0.874402, -0.688576)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chair3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11838, -0.075913)
+shape = SubResource("CapsuleShape3D_eotun")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.36593, 2.16678, -3.33912)
