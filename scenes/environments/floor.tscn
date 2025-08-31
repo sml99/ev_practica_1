@@ -27,9 +27,9 @@ size = Vector3(1.95286, 1, 33)
 material = ExtResource("2_lyihq")
 
 [node name="Wall5" type="CSGBox3D" parent="Wall2"]
-transform = Transform3D(0.906114, -1.1191e-13, 0, -5.68434e-14, 1.00003, 0, 0, 0, 1.44703, -0.382652, 1.7387, -7.1886)
+transform = Transform3D(0.906114, -1.62981e-13, 0, -5.68434e-14, 1.00003, 0, 0, 0, 1.44703, -0.382652, 1.7387, 0.247815)
 operation = 2
-size = Vector3(1.15981, 6.47742, 11.4349)
+size = Vector3(1.15981, 6.47742, 21.7131)
 material = ExtResource("2_lyihq")
 
 [node name="Wall3" type="CSGBox3D" parent="."]

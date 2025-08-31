@@ -20,18 +20,8 @@ size = Vector3(1, 1.03223, 1.13159)
 material = ExtResource("2_jac5g")
 
 [node name="Wall7" type="CSGBox3D" parent="."]
-transform = Transform3D(0.474513, 0, 0, 0, 5.5, 0, 0, 0, 12.4196, -2.41784, 1.63692, 14.1921)
-size = Vector3(1, 0.546877, 0.753356)
-material = ExtResource("2_jac5g")
-
-[node name="Wall8" type="CSGBox3D" parent="."]
-transform = Transform3D(0.474513, 0, 0, 0, 5.5, 0, 0, 0, 12.4196, -14.7195, 1.63692, 14.1921)
-size = Vector3(1, 0.546877, 0.753356)
-material = ExtResource("2_jac5g")
-
-[node name="Wall5" type="CSGBox3D" parent="."]
-transform = Transform3D(0.474513, 0, 0, 0, 5.5, 0, 0, 0, 12.4196, -2.41784, 8.851, 0.0136371)
-size = Vector3(1, 1.03223, 1.51794)
+transform = Transform3D(0.474513, 0, 0, 0, 5.5, 0, 0, 0, 12.4196, -20.7861, 1.63692, -0.0809917)
+size = Vector3(1, 0.546877, 1.51353)
 material = ExtResource("2_jac5g")
 
 [node name="Wall3" type="CSGBox3D" parent="."]
@@ -44,15 +34,14 @@ transform = Transform3D(-2.07416e-08, 0, 12.4196, 0, 5.5, 0, -0.474513, 0, -5.42
 size = Vector3(1, 1.04688, 1.02814)
 material = ExtResource("2_jac5g")
 
-[node name="Wall5" type="CSGBox3D" parent="Wall4"]
-transform = Transform3D(0.999989, 0, -1.02318e-12, 0, 0.999984, 0, 8.88178e-16, 0, 1, 0.0619335, -0.0482782, -0.320906)
-operation = 2
-size = Vector3(1.33548, 0.903442, 0.263825)
-material = ExtResource("3_xfufl")
-
 [node name="Wall6" type="CSGBox3D" parent="."]
-transform = Transform3D(-2.07416e-08, 0, 12.4196, 0, 5.5, 0, -0.474513, 0, -5.42878e-07, -8.57397, 1.60334, 18.6838)
-size = Vector3(1, 0.563967, 1.02814)
+transform = Transform3D(-2.07416e-08, 0, 12.4196, 0, 5.5, 0, -0.474513, 0, -5.42878e-07, -18.033, 1.60334, 9.12176)
+size = Vector3(1, 0.563967, 0.482621)
+material = ExtResource("2_jac5g")
+
+[node name="Wall8" type="CSGBox3D" parent="."]
+transform = Transform3D(-2.07416e-08, 0, 12.4196, 0, 5.5, 0, -0.474513, 0, -5.42878e-07, -18.033, 1.60334, -9.26763)
+size = Vector3(1, 0.563967, 0.482621)
 material = ExtResource("2_jac5g")
 
 [node name="Wall2" type="CSGBox3D" parent="."]
@@ -60,28 +49,34 @@ transform = Transform3D(0.474513, 0, 0, 0, 5.5, 0, 0, 0, 12.4196, -14.7927, 2.91
 size = Vector3(1, 1.02832, 1.52136)
 material = ExtResource("2_jac5g")
 
-[node name="NfcPass" parent="." instance=ExtResource("2_sr3wu")]
-transform = Transform3D(-0.544, 0, -8.21417e-08, 0, 0.65, 0, 8.21417e-08, 0, -0.544, -3.61004, 1.32531, 4.74726)
+[node name="Wall5" type="CSGBox3D" parent="Wall2"]
+transform = Transform3D(0.999989, 0, -1.02318e-12, 0, 0.999984, 0, 8.88178e-16, 0, 1, 0.0619335, -0.0446692, 0.54434)
+operation = 2
+size = Vector3(1.33548, 0.903442, 0.263825)
+material = ExtResource("3_xfufl")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NfcPass"]
-transform = Transform3D(-9.04135e-08, 0, 0.440781, 0, 1.9919, 0, -2.06842, 0, -1.92671e-08, 2.35066, 0.14101, -5.6318)
-size = Vector3(2.26746, 1.98608, 0.537903)
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(2.19084e-07, 0, -0.239785, 0, 1.29473, 0, 1.12522, 0, 4.66868e-08, -4.83187, 1.32033, 7.94856)
+size = Vector3(2.02289, 0.980834, 0.537903)
+
+[node name="Label3D" type="Label3D" parent="CSGBox3D"]
+transform = Transform3D(0.888715, 0, -2.11882e-07, 0, 0.772359, 0, 9.94286e-07, 0, 4.1704, -0.13782, 0.0333887, 0.702379)
+text = "Press O to open door"
+
+[node name="NfcPass" parent="." instance=ExtResource("2_sr3wu")]
+transform = Transform3D(-0.544, 0, -8.21417e-08, 0, 0.65, 0, 8.21417e-08, 0, -0.544, -3.55311, 1.32531, 4.74726)
 
 [node name="MainFloor" type="CSGBox3D" parent="."]
-transform = Transform3D(18.3841, 0, 0, 0, 0.271754, 0, 0, 0, 18.9904, -8.59791, 0, 4.71804)
-size = Vector3(0.698668, 1, 1.49689)
+transform = Transform3D(18.3841, 0, 0, 0, 0.271754, 0, 0, 0, 18.9904, -11.6076, 0, -0.102885)
+size = Vector3(1.02609, 1, 0.989168)
 material = ExtResource("4_saaua")
 
 [node name="MainFloor2" type="CSGBox3D" parent="."]
 transform = Transform3D(18.3841, 0, 0, 0, 0.271754, 0, 0, 0, 18.9904, -8.60141, 5.90351, 0)
 size = Vector3(0.698288, 1, 1)
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.00029, 1.79532, 7.79348)
-text = "Press O to open door"
-
 [node name="trash_bin" parent="." instance=ExtResource("6_51bye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58989, 1, -7.00713)
 
 [node name="Door" parent="." instance=ExtResource("7_yuwyc")]
-transform = Transform3D(-3.27835e-08, 0, -0.796867, 0, 0.852439, 0, 0.75, 0, -3.48322e-08, -12.6069, 2.78588, 9.06644)
+transform = Transform3D(0.75, 0, 0, 0, 0.852439, 0, 0, 0, 0.796867, -14.9921, 2.78588, 6.77953)

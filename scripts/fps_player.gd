@@ -8,7 +8,7 @@ extends CharacterBody3D
 
 @export var mouse_sensitivity = 0.002
 @export var movement_speed = 5.0
-@export var jump_velocity = 4.5
+@export var jump_velocity = 2
 var pitch_angle = 0.0
 
 func _ready():
