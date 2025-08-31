@@ -8,8 +8,8 @@ transform = Transform3D(1, 0, 0, 0, 1.06331, 0, 0, 0, 1, 0, 0, 0)
 use_collision = true
 
 [node name="MainFloor" type="CSGBox3D" parent="."]
-transform = Transform3D(2.79539, 0, 0, 0, 0.281798, 0, 0, 0, 0.560156, 0, -0.719315, 0)
-size = Vector3(11.4354, 1, 33)
+transform = Transform3D(2.79539, 0, 0, 0, 0.281798, 0, 0, 0, 0.560156, -0.55944, -0.719, 0)
+size = Vector3(11.8843, 1, 33)
 material = ExtResource("1_eria7")
 
 [node name="Roof" type="CSGBox3D" parent="."]
@@ -27,9 +27,9 @@ size = Vector3(1.95286, 1, 33)
 material = ExtResource("2_lyihq")
 
 [node name="Wall5" type="CSGBox3D" parent="Wall2"]
-transform = Transform3D(0.906114, 8.21565e-15, 0, 0, 1.00003, 0, 0, 0, 1.44703, -0.166948, 1.7387, -12.4756)
+transform = Transform3D(0.906114, -1.1191e-13, 0, -5.68434e-14, 1.00003, 0, 0, 0, 1.44703, -0.382652, 1.7387, -7.1886)
 operation = 2
-size = Vector3(1.63592, 6.47742, 5.00696)
+size = Vector3(1.15981, 6.47742, 11.4349)
 material = ExtResource("2_lyihq")
 
 [node name="Wall3" type="CSGBox3D" parent="."]

@@ -3,6 +3,8 @@ extends CharacterBody3D
 @onready var yaw_node = $Yaw
 @onready var camera = $Yaw/Camera3D
 @onready var info_label = $ControlsLabel/UI/InfoLabel
+@onready var interaction_label = $ControlsLabel/UI/InteractionLabel
+
 
 @export var mouse_sensitivity = 0.002
 @export var movement_speed = 5.0
@@ -25,6 +27,39 @@ func _input(event):
 		pitch_angle -= event.relative.y * mouse_sensitivity
 		pitch_angle = clamp(pitch_angle, -1.5, 1.5)
 		camera.rotation.x = pitch_angle
+		
+
+	# Right-click to show/hide mouse for clicking
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			toggle_mouse_mode()
+
+	
+	# Mouse look (ONLY when captured)
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		yaw_node.rotate_y(-event.relative.x * mouse_sensitivity)
+		pitch_angle -= event.relative.y * mouse_sensitivity
+		pitch_angle = clamp(pitch_angle, -1.5, 1.5)
+		camera.rotation.x = pitch_angle
+
+func toggle_mouse_mode():
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		print("Mouse visible - can click objects")
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		print("Mouse captured - can look around")
+
+func show_interaction_prompt(text: String):
+	if interaction_label:
+		interaction_label.text = text
+		interaction_label.visible = true
+		print("Show E")
+
+func hide_interaction_prompt():
+	if interaction_label:
+		interaction_label.visible = false
+		print("Hide E")
 
 func _physics_process(delta):
 	# Add gravity

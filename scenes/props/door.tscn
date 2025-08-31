@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://4kalw2qls0ga"]
+
+[ext_resource type="Material" uid="uid://dvky5rvmqatbx" path="res://materiales/door.tres" id="1_08dhn"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_livyq"]
+[ext_resource type="Material" uid="uid://do5315xfvbojk" path="res://materiales/door_frame.tres" id="2_0pgit"]
+
+[sub_resource type="Animation" id="Animation_akt6g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dqucw"]
+resource_name = "door_open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_se80d"]
+_data = {
+"RESET": SubResource("Animation_akt6g"),
+"door_open": SubResource("Animation_dqucw")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bv74g"]
+size = Vector3(1.83105, 2.21637, 0.22998)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5spcq"]
+radius = 0.445016
+height = 3.29108
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DoorFrame" type="CSGBox3D" parent="."]
+transform = Transform3D(-8.74223e-08, 0, 1, 0, 2.5, 0, -2, 0, -4.37111e-08, 0, -0.202886, 0)
+size = Vector3(2.2, 2.33975, 0.2)
+material = ExtResource("2_0pgit")
+
+[node name="Door" type="CSGBox3D" parent="DoorFrame"]
+transform = Transform3D(1, 0, 1.54543e-13, 0, 1, 0, -5.11591e-13, 0, 1, 4.79347e-09, -0.0650357, -0.0450151)
+operation = 2
+size = Vector3(1.8, 2.2, 0.401465)
+material = ExtResource("1_08dhn")
+
+[node name="Handle4" type="CSGCylinder3D" parent="DoorFrame"]
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74223e-08, 0, -1, 0.935084, 0.747322, -0.00846096)
+radius = 0.05
+height = 0.4
+material = ExtResource("2_0pgit")
+
+[node name="Handle5" type="CSGCylinder3D" parent="DoorFrame"]
+transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74223e-08, 0, -1, 0.935084, -0.728978, -0.00846096)
+radius = 0.05
+height = 0.4
+material = ExtResource("2_0pgit")
+
+[node name="Hinge" type="Node3D" parent="."]
+transform = Transform3D(-8.74228e-08, 0, 1, 0, 2.5, 0, -2, 0, -4.37114e-08, -7.86805e-08, -0.0375, -1.8)
+
+[node name="Door2" type="StaticBody3D" parent="Hinge"]
+transform = Transform3D(1, 0, 3.55271e-14, 0, 1, 0, -3.55271e-14, 0, 1, -0.9, 0.015, 2.84217e-14)
+script = ExtResource("1_livyq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hinge/Door2"]
+libraries = {
+"": SubResource("AnimationLibrary_se80d")
+}
+
+[node name="Handle" type="CSGCylinder3D" parent="Hinge/Door2"]
+transform = Transform3D(4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0, 3.82137e-15, 8.74228e-08, -1, -0.612351, -0.146273, -0.169022)
+radius = 0.05
+height = 0.4
+material = ExtResource("2_0pgit")
+
+[node name="Handle2" type="CSGCylinder3D" parent="Hinge/Door2"]
+transform = Transform3D(4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0, 3.82137e-15, 8.74228e-08, -1, -0.61235, -0.146273, 0.226307)
+radius = 0.05
+height = 0.4
+material = ExtResource("2_0pgit")
+
+[node name="Handle3" type="CSGCylinder3D" parent="Hinge/Door2"]
+transform = Transform3D(1.91068e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.783792, -0.146273, 0.052991)
+radius = 0.05
+height = 0.4
+material = ExtResource("2_0pgit")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/Door2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0115753, -0.145937, -0.00116919)
+shape = SubResource("BoxShape3D_bv74g")
+
+[node name="Door" type="CSGBox3D" parent="Hinge/Door2"]
+transform = Transform3D(1, 0, -3.55271e-15, 0, 1, 0, 1.42109e-14, 0, 1, 1.35263e-09, -0.153051, -0.012308)
+operation = 2
+size = Vector3(1.8, 2.2, 0.251172)
+material = ExtResource("1_08dhn")
+
+[node name="ClickArea" type="Area3D" parent="Hinge/Door2"]
+transform = Transform3D(1.72687, 0, 0, 0, 1, 0, 1.42109e-14, 0, 8.41772, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/Door2/ClickArea"]
+transform = Transform3D(2.36948, 0, -1.10845e-12, 0, 1, 0, 1.05445e-11, 0, 1, 0.00185393, -0.143448, 0.00596121)
+shape = SubResource("CapsuleShape3D_5spcq")

@@ -26,6 +26,7 @@ func _input(event):
 		else:
 			switch_to_fps.emit()
 
+
 func _on_switch_to_fps():
 	current_camera = "fps"
 	fps_camera.current = true

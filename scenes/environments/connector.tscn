@@ -23,8 +23,8 @@ size = Vector3(1.76794, 0.764568, 1.56418)
 material = ExtResource("2_xeqbr")
 
 [node name="Wall8" parent="Walls" instance=ExtResource("1_chqgd")]
-transform = Transform3D(-0.474513, 0, -6.51538e-07, 0, 4.60848, 0, 4.14832e-08, 0, -7.45272, 0.930091, 6.69515, 2.27281)
-size = Vector3(0.516113, 1.42043, 1.93546)
+transform = Transform3D(-0.474513, 0, -6.51538e-07, 0, 4.60848, 0, 4.14832e-08, 0, -7.45272, 1.00357, 6.69515, 2.2293)
+size = Vector3(0.516113, 1.42043, 1.92378)
 material = ExtResource("2_xeqbr")
 
 [node name="Wall9" parent="Walls/Wall8" instance=ExtResource("1_chqgd")]
@@ -57,8 +57,8 @@ material = ExtResource("2_xeqbr")
 [node name="Floors" type="CSGCombiner3D" parent="."]
 
 [node name="Floor3" type="CSGBox3D" parent="Floors"]
-transform = Transform3D(-7.61285, 0, 0.0545077, 0, 0.283318, 0, -0.0891602, 0, -4.65408, 0.964108, 3.76938, -6.56174)
-size = Vector3(0.802246, 1, 0.959473)
+transform = Transform3D(-7.61285, 0, 0.0545077, 0, 0.283318, 0, -0.0891602, 0, -4.65408, 0.937623, 3.76938, -6.56205)
+size = Vector3(0.809204, 1, 0.959473)
 material = ExtResource("3_0gvfd")
 
 [node name="Floor4" type="CSGBox3D" parent="Floors"]

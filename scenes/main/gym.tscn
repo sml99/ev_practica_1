@@ -1,13 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://bbrsn3v0vyftf"]
+[gd_scene load_steps=21 format=3 uid="uid://bbrsn3v0vyftf"]
 
 [ext_resource type="PackedScene" uid="uid://c6adx8bu5ocy7" path="res://scenes/environments/entrance_room.tscn" id="1_urlyb"]
 [ext_resource type="PackedScene" uid="uid://dkot7i0j4suuo" path="res://scenes/main/camera/camera.tscn" id="2_r8ho3"]
 [ext_resource type="PackedScene" uid="uid://bl40ifodl4ulk" path="res://scenes/environments/floor.tscn" id="3_jl6yi"]
-[ext_resource type="Script" path="res://scenes/main/toggle_light.gd" id="3_k7brm"]
+[ext_resource type="Script" path="res://scripts/toggle_light.gd" id="3_k7brm"]
 [ext_resource type="PackedScene" uid="uid://bpgaks0gqnou5" path="res://scenes/props/training_stuff.tscn" id="4_o0bpm"]
 [ext_resource type="PackedScene" uid="uid://cqkvi6thli1kq" path="res://scenes/environments/connector.tscn" id="5_ixqqw"]
-[ext_resource type="Script" path="res://scenes/main/fps_player.gd" id="7_y56js"]
-[ext_resource type="Script" path="res://scenes/main/camera_controller.gd" id="8_8qn8s"]
+[ext_resource type="Script" path="res://scripts/fps_player.gd" id="7_y56js"]
+[ext_resource type="Script" path="res://scripts/camera_controller.gd" id="8_8qn8s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_84lov"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -64,6 +64,27 @@ _data = {
 radius = 0.833955
 height = 3.02868
 
+[sub_resource type="LabelSettings" id="LabelSettings_8ldx7"]
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_hadn3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.346857, -0.480679, 0.0190589)]
+}
+
+[sub_resource type="Animation" id="Animation_dr3vj"]
+resource_name = "camera_y"
+
 [sub_resource type="Animation" id="Animation_gj4n5"]
 resource_name = "surveillance_sweep"
 length = 6.0
@@ -79,24 +100,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.347321, -0.0872665, 0.0191986), Vector3(-0.347321, -0.872665, 0.0191986), Vector3(-0.347321, -0.0872665, 0.0191986)]
-}
-
-[sub_resource type="Animation" id="Animation_dr3vj"]
-resource_name = "camera_y"
-
-[sub_resource type="Animation" id="Animation_hadn3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.346857, -0.480679, 0.0190589)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cj2pd"]
@@ -138,7 +141,7 @@ shadow_enabled = true
 omni_range = 15.0
 
 [node name="FirstFloor" parent="." instance=ExtResource("3_jl6yi")]
-transform = Transform3D(-1.09143, 0, -8.74228e-08, 0, 1, 0, 9.54162e-08, 0, -1, 21.483, 0.6786, 0.278687)
+transform = Transform3D(-1.09143, 0, -8.74228e-08, 0, 1, 0, 9.54162e-08, 0, -1, 21.3885, 0.6786, 0.278687)
 
 [node name="TrainingStuff" parent="FirstFloor" instance=ExtResource("4_o0bpm")]
 transform = Transform3D(-0.916229, 0, 8.00993e-08, 0, 1, 0, -8.74231e-08, 0, -1, -0.351248, 0.0474314, -2.98023e-08)
@@ -150,7 +153,7 @@ shadow_enabled = true
 omni_range = 20.0
 
 [node name="SecondFloor" parent="." instance=ExtResource("3_jl6yi")]
-transform = Transform3D(-1.09143, 0, -8.74228e-08, 0, 1, 0, 9.54162e-08, 0, -1, 21.482, 8.424, 0.279)
+transform = Transform3D(-1.09143, 0, -8.74228e-08, 0, 1, 0, 9.54162e-08, 0, -1, 21.3875, 8.424, 0.279)
 
 [node name="TrainingStuff2" parent="SecondFloor" instance=ExtResource("4_o0bpm")]
 transform = Transform3D(0.916229, 0, 0, 0, 1, 0, 0, 0, 1, 2.68751, 0.0860767, -0.263355)
@@ -162,7 +165,7 @@ shadow_enabled = true
 omni_range = 20.0
 
 [node name="Connector" parent="." instance=ExtResource("5_ixqqw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.161486, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0857725, -0.161486, 0)
 
 [node name="MainOfficeLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.49016, 0)
@@ -177,7 +180,7 @@ directional_shadow_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.852567, 0.522618, 0, -0.522618, 0.852567, 0.854395, 6.7384, 10.6041)
 
 [node name="FPSPlayer" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.72061, 6.73621)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2404, 3.72061, 13.8478)
 script = ExtResource("7_y56js")
 
 [node name="Yaw" type="Node3D" parent="FPSPlayer"]
@@ -208,6 +211,8 @@ WASD - Move
 Mouse - Look around  
 SPACE - Jump
 TAB - Switch Camera
+E - Interact (when near objects)
+Right Click - Show/Hide Cursor
 ESC - Exit"
 
 [node name="InfoLabel" type="Label" parent="FPSPlayer/ControlsLabel/UI"]
@@ -217,10 +222,18 @@ offset_top = 27.0
 offset_right = 275.0
 offset_bottom = 91.0
 
+[node name="InteractionLabel" type="Label" parent="FPSPlayer/ControlsLabel/UI"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 314.0
+offset_right = 66.0
+offset_bottom = 337.0
+label_settings = SubResource("LabelSettings_8ldx7")
+
 [node name="SurveillanceSystem" type="Node3D" parent="."]
 
 [node name="SurveillanceCamera" type="Camera3D" parent="SurveillanceSystem"]
-transform = Transform3D(0.889516, 0.140257, -0.434844, 0.0179228, 0.940275, 0.339943, 0.456553, -0.310179, 0.833876, -14.0285, 5.40796, 8.75053)
+transform = Transform3D(0.889516, 0.140257, -0.434844, 0.0179228, 0.940275, 0.339943, 0.456553, -0.310179, 0.833875, -14.0285, 5.40796, 8.75053)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SurveillanceSystem/SurveillanceCamera"]
 libraries = {
