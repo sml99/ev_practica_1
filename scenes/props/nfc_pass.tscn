@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://blt22t5m5vnce"]
+[gd_scene load_steps=6 format=3 uid="uid://blt22t5m5vnce"]
 
 [ext_resource type="PackedScene" uid="uid://cl8nygls2kcml" path="res://blender/nfc_pass.glb" id="1_w8hxk"]
 [ext_resource type="Script" path="res://scripts/open_door.gd" id="2_t828t"]
@@ -8,6 +8,10 @@ points = PackedVector3Array(0.636672, 1.13409, 0.7683, -1, -0.998758, -1, 0.9894
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yfj4a"]
 points = PackedVector3Array(0.0584636, 0.166546, -9.79749, -0.0534879, -0.504988, -7.89263, 0.0584636, -0.504988, -7.89263, -0.0534879, 0.614527, -0.0577126, 0.0584636, -0.504988, -0.0577126, 0.0584636, 0.614527, -0.0577126, -0.0534879, 0.614527, -7.89263, -0.0534879, -0.504988, -0.0577126, 0.0584636, 0.614527, -7.89263, -0.0534879, -0.113114, -9.74124, -0.0534879, 0.446424, -9.18065, 0.0584636, -0.336995, -9.18065, 0.0584636, 0.502422, -8.90131, -0.0534879, -0.392993, -8.90131, -0.0534879, 0.166546, -9.79749, 0.0584636, -0.113114, -9.74124, 0.0584636, 0.334429, -9.51719, 0.0584636, -0.44899, -8.50947, -0.0534879, -0.225109, -9.51719, -0.0534879, 0.558419, -8.50947, -0.0534879, 0.334429, -9.51719, 0.0584636, -0.225109, -9.51719, -0.0534879, -0.44899, -8.50947, 0.0584636, 0.558419, -8.50947, 0.0584636, 0.446424, -9.18065, -0.0534879, -0.336995, -9.18065, 0.0584636, -0.392993, -8.90131, -0.0534879, 0.502422, -8.90131)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_txgp7"]
+radius = 5.62446
+height = 11.3961
 
 [node name="nfc_pass" instance=ExtResource("1_w8hxk")]
 script = ExtResource("2_t828t")
@@ -21,3 +25,8 @@ shape = SubResource("ConvexPolygonShape3D_nepn8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_yfj4a")
+
+[node name="ClickArea" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClickArea" index="0"]
+shape = SubResource("CapsuleShape3D_txgp7")

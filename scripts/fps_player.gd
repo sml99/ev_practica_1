@@ -5,10 +5,11 @@ extends CharacterBody3D
 @onready var info_label = $ControlsLabel/UI/InfoLabel
 @onready var interaction_label = $ControlsLabel/UI/InteractionLabel
 
-
 @export var mouse_sensitivity = 0.002
 @export var movement_speed = 5.0
 @export var jump_velocity = 2
+@export var sprint_multiplier = 1.4 
+
 var pitch_angle = 0.0
 
 func _ready():
@@ -82,20 +83,27 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		input_vector.x += 1
 	
+	# Sprinting
+	var speed :float = movement_speed
+	if Input.is_action_pressed("sprint"):       
+		speed *= sprint_multiplier
+	
 	# Apply movement with collision detection
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized()
 		var direction = Vector3(input_vector.x, 0, input_vector.y)
 		direction = yaw_node.transform.basis * direction
-		velocity.x = direction.x * movement_speed
-		velocity.z = direction.z * movement_speed
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, movement_speed)
 		velocity.z = move_toward(velocity.z, 0, movement_speed)
 	
 	if info_label:
 		var pos = global_position
-		info_label.text = "Position: %.1f, %.1f, %.1f\nOn Floor: %s" % [pos.x, pos.y, pos.z, is_on_floor()]
+		var sprinting = Input.is_action_pressed("sprint")
+		info_label.text = "Position: %.1f, %.1f, %.1f\nOn Floor: %s\nSprinting: %s" % [
+			pos.x, pos.y, pos.z, is_on_floor(), sprinting
+		]
 
-	
 	move_and_slide()

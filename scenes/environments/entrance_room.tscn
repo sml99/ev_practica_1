@@ -61,14 +61,14 @@ size = Vector3(2.02289, 0.980834, 0.537903)
 
 [node name="Label3D" type="Label3D" parent="CSGBox3D"]
 transform = Transform3D(0.888715, 0, -2.11882e-07, 0, 0.772359, 0, 9.94286e-07, 0, 4.1704, -0.13782, 0.0333887, 0.702379)
-text = "Press O to open door"
+text = "Welcome to MyGYM"
 
 [node name="NfcPass" parent="." instance=ExtResource("2_sr3wu")]
 transform = Transform3D(-0.544, 0, -8.21417e-08, 0, 0.65, 0, 8.21417e-08, 0, -0.544, -3.55311, 1.32531, 4.74726)
 
 [node name="MainFloor" type="CSGBox3D" parent="."]
-transform = Transform3D(18.3841, 0, 0, 0, 0.271754, 0, 0, 0, 18.9904, -11.6076, 0, -0.102885)
-size = Vector3(1.02609, 1, 0.989168)
+transform = Transform3D(18.3841, 0, 0, 0, 0.271754, 0, 0, 0, 18.9904, -11.6076, 0, -0.023641)
+size = Vector3(1.02609, 1, 0.997514)
 material = ExtResource("4_saaua")
 
 [node name="MainFloor2" type="CSGBox3D" parent="."]

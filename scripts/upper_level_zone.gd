@@ -12,7 +12,6 @@ func _on_player_entered(body):
 		show_room("SecondFloor/TrainingStuff2")
 		
 		# Unload ground level areas (can't see them from upstairs)
-		#hide_room("EntranceRoom")
 		hide_room("FirstFloor/TrainingStuff1")
 
 func show_room(room_name):
