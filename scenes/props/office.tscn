@@ -97,3 +97,11 @@ radius = 0.15
 height = 0.5
 sides = 12
 material = ExtResource("4_ci2u2")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0215762, 0)
+operation = 2
+radius = 0.15
+height = 0.0490092
+sides = 12
+material = ExtResource("4_ci2u2")

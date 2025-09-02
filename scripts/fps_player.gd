@@ -14,56 +14,51 @@ var pitch_angle = 0.0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Improve InteractionLabel font for readability
+	if interaction_label:
+		# Use theme overrides if available in the scene (Godot 4)
+		interaction_label.add_theme_font_size_override("font_size", 20)
+		interaction_label.add_theme_color_override("font_color", Color(1,1,1))
+		interaction_label.add_theme_color_override("font_outline_color", Color(0,0,0,0.8))
+		interaction_label.add_theme_constant_override("outline_size", 2)
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 	
-	# Mouse look
+	# Mouse look: integrate relative mouse motion into yaw/pitch
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		# Horizontal rotation (Yaw)
+		# Yaw: rotate around Y axis
 		yaw_node.rotate_y(-event.relative.x * mouse_sensitivity)
-		
-		# Vertical rotation (Pitch) with limits
+		# Pitch: rotate around X axis with clamp
 		pitch_angle -= event.relative.y * mouse_sensitivity
 		pitch_angle = clamp(pitch_angle, -1.5, 1.5)
 		camera.rotation.x = pitch_angle
 		
 
-	# Right-click to show/hide mouse for clicking
+	# Toggle cursor capture with RMB
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			toggle_mouse_mode()
 
-	
-	# Mouse look (ONLY when captured)
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		yaw_node.rotate_y(-event.relative.x * mouse_sensitivity)
-		pitch_angle -= event.relative.y * mouse_sensitivity
-		pitch_angle = clamp(pitch_angle, -1.5, 1.5)
-		camera.rotation.x = pitch_angle
 
 func toggle_mouse_mode():
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		print("Mouse visible - can click objects")
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		print("Mouse captured - can look around")
 
 func show_interaction_prompt(text: String):
 	if interaction_label:
 		interaction_label.text = text
 		interaction_label.visible = true
-		print("Show E")
 
 func hide_interaction_prompt():
 	if interaction_label:
 		interaction_label.visible = false
-		print("Hide E")
 
 func _physics_process(delta):
-	# Add gravity
+	# Integrate gravity when not grounded
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
@@ -71,7 +66,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
 	
-	# WASD Movement
+	# WASD input vector
 	var input_vector = Vector2.ZERO
 	
 	if Input.is_action_pressed("move_forward"):
@@ -83,12 +78,12 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		input_vector.x += 1
 	
-	# Sprinting
+	# Sprint scalar
 	var speed :float = movement_speed
 	if Input.is_action_pressed("sprint"):       
 		speed *= sprint_multiplier
 	
-	# Apply movement with collision detection
+	# Move in camera (yaw) space; project onto XZ plane
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized()
 		var direction = Vector3(input_vector.x, 0, input_vector.y)

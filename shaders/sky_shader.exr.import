@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbjvittm4buig"
-path.bptc="res://.godot/imported/citrus_orchard_road_puresky_4k.exr-b67dd68df098e8010821ae4213eedb06.bptc.ctex"
+path.bptc="res://.godot/imported/sky_shader.exr-78b1db9b034dc258b7d1ca3e1a49d3a6.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://shaders/citrus_orchard_road_puresky_4k.exr"
-dest_files=["res://.godot/imported/citrus_orchard_road_puresky_4k.exr-b67dd68df098e8010821ae4213eedb06.bptc.ctex"]
+source_file="res://shaders/sky_shader.exr"
+dest_files=["res://.godot/imported/sky_shader.exr-78b1db9b034dc258b7d1ca3e1a49d3a6.bptc.ctex"]
 
 [params]
 

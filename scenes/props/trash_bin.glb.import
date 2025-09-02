@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dn2fspp7j68ws"
-path="res://.godot/imported/dumbbell_rack.glb-c9b4aeca5d5bb42409045635290645a4.scn"
+uid="uid://b4cdqqkvlpfow"
+path="res://.godot/imported/trash_bin.glb-6db6aa3730c3feee57e04eb8a1845743.scn"
 
 [deps]
 
-source_file="res://blender/dumbbell_rack.glb"
-dest_files=["res://.godot/imported/dumbbell_rack.glb-c9b4aeca5d5bb42409045635290645a4.scn"]
+source_file="res://scenes/props/trash_bin.glb"
+dest_files=["res://.godot/imported/trash_bin.glb-6db6aa3730c3feee57e04eb8a1845743.scn"]
 
 [params]
 

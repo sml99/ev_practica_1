@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c78kac18m8s3q"
-path="res://.godot/imported/bench.glb-b00123f24e0def6b45222117ccdbc87f.scn"
+uid="uid://72pagwv8hsud"
+path="res://.godot/imported/treadmill.glb-caf26fbca7046e80039edecef3e1dd97.scn"
 
 [deps]
 
-source_file="res://blender/bench.glb"
-dest_files=["res://.godot/imported/bench.glb-b00123f24e0def6b45222117ccdbc87f.scn"]
+source_file="res://scenes/props/treadmill.glb"
+dest_files=["res://.godot/imported/treadmill.glb-caf26fbca7046e80039edecef3e1dd97.scn"]
 
 [params]
 

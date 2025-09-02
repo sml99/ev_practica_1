@@ -16,5 +16,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("move_backward"):
 		$PivotX.rotation.x += vertical_speed * delta
 
+	# Clamp pitch (X rotation) in radians
 	var current_x = $PivotX.rotation.x
 	$PivotX.rotation.x = clamp(current_x, min_angle, max_angle)

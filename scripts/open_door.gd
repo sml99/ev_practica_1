@@ -7,26 +7,26 @@ var door_open := false
 var player_nearby := false
 
 func _ready():
-	# Connect proximity + click interactions
+	# Input: mouse on Area3D, proximity via body_entered/exited
 	if click_area:
 		click_area.input_event.connect(_on_click_area_input_event)
 		click_area.body_entered.connect(_on_player_entered)
 		click_area.body_exited.connect(_on_player_exited)
 
 func _process(_delta):
-	# Only allow triggering when player is in range
+	# Gate interaction by proximity
 	if player_nearby and not door_open:
 		if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("pass_nft"):
 			_handle_door()
 
-# Mouse click (also requires being in range)
+# Mouse click (also requires proximity)
 func _on_click_area_input_event(_camera, event, _event_position, _normal, _shape_idx):
 	if not player_nearby or door_open:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		_handle_door()
 
-# Proximity handling
+# Proximity enter/exit
 func _on_player_entered(body):
 	if body.name == "FPSPlayer":
 		player_nearby = true

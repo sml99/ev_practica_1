@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cl8nygls2kcml"
-path="res://.godot/imported/nfc_pass.glb-c72325a23f2a0007a8435b336b435205.scn"
+uid="uid://c78kac18m8s3q"
+path="res://.godot/imported/bench.glb-4a78f6b60f38256637ad68c21dde5efa.scn"
 
 [deps]
 
-source_file="res://blender/nfc_pass.glb"
-dest_files=["res://.godot/imported/nfc_pass.glb-c72325a23f2a0007a8435b336b435205.scn"]
+source_file="res://scenes/props/bench.glb"
+dest_files=["res://.godot/imported/bench.glb-4a78f6b60f38256637ad68c21dde5efa.scn"]
 
 [params]
 

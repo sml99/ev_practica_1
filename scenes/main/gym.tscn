@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://bbrsn3v0vyftf"]
 
-[ext_resource type="Texture2D" uid="uid://bbjvittm4buig" path="res://shaders/citrus_orchard_road_puresky_4k.exr" id="1_13uc1"]
+[ext_resource type="Texture2D" uid="uid://bbjvittm4buig" path="res://shaders/sky_shader.exr" id="1_13uc1"]
 [ext_resource type="PackedScene" uid="uid://c6adx8bu5ocy7" path="res://scenes/environments/entrance_room.tscn" id="1_urlyb"]
 [ext_resource type="PackedScene" uid="uid://bl40ifodl4ulk" path="res://scenes/environments/floor.tscn" id="3_jl6yi"]
 [ext_resource type="Script" path="res://scripts/toggle_light.gd" id="3_k7brm"]
@@ -146,7 +146,7 @@ size = Vector3(16.8427, 5.23956, 10.0251)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xpvg6"]
 size = Vector3(2.85544, 3.21419, 1.44521)
 
-[node name="Node3D" type="Node3D"]
+[node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_40441")

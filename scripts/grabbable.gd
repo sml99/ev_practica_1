@@ -7,7 +7,7 @@ var grabbing_camera = null
 var player_nearby = false
 
 func is_player_already_carrying():
-	# Check if any RigidBody3D in scene is already grabbed
+	# Query grabbable group for an already grabbed body
 	var all_bodies = get_tree().get_nodes_in_group("grabbable")
 	for body in all_bodies:
 		if body != self and body.is_grabbed:
@@ -15,7 +15,7 @@ func is_player_already_carrying():
 	return false
 
 func _ready():
-	# ADD TO GRABBABLE GROUP
+	# Register in grabbable group for global queries
 	add_to_group("grabbable")
 	
 	input_event.connect(_on_input_event)
@@ -23,25 +23,24 @@ func _ready():
 		grab_area.body_entered.connect(_on_player_entered)
 		grab_area.body_exited.connect(_on_player_exited)
 
-func _on_input_event(camera, event, position, normal, shape_idx):
+func _on_input_event(camera, event, _event_position, _normal, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if not is_grabbed:
 				if not is_player_already_carrying():
 					grab_object(camera)
-					print("Grabbed ", name, " with mouse!")
 				else:
-					print("Already carrying something! Drop it first.")
+					# blocked: already carrying
+					pass
 			else:
-				release_object()
+				release_object() # mouse toggle drop
 
-func _process(delta):
+func _process(_delta):
 	if is_grabbed:
 		follow_camera()
 		if Input.is_action_just_pressed("interact"):
 			release_object()
-			print("Dropped ", name, " with E key!")
-			# If still near after dropping, show prompt again
+			# If still near after dropping, re-show prompt
 			if player_nearby and not is_player_already_carrying():
 				var player = _get_player()
 				if player:
@@ -49,17 +48,16 @@ func _process(delta):
 			
 	elif player_nearby and Input.is_action_just_pressed("interact"):
 		if not is_player_already_carrying():
-			print("E pressed near ", name)
 			var player = _get_player()
 			if player:
 				var camera = player.get_node("Yaw/Camera3D")
 				if camera:
 					grab_object(camera)
-					print("Grabbed ", name, " with E key!")
 		else:
-			print("Already carrying something! Drop it first.")
+			# blocked: already carrying
+			pass
 
-# Proximity + Prompt handling
+# Proximity prompt handling
 func _on_player_entered(body):
 	if body.name == "FPSPlayer":
 		player_nearby = true
@@ -77,17 +75,15 @@ func _on_player_exited(body):
 		if body.has_method("hide_interaction_prompt"):
 			body.hide_interaction_prompt()
 
-# Grab / Drop logic
+# Grab / Drop state
 func grab_object(camera):
 	is_grabbed = true
 	grabbing_camera = camera
 	set_gravity_scale(0)
 	set_linear_damp(10.0)
-	# DISABLE COLLISION with player when grabbed
 	collision_layer = 0
 	collision_mask = 0
-
-	# Update prompt to "drop" if in range
+	
 	var player = _get_player()
 	if player and player_nearby:
 		player.show_interaction_prompt("Press E to drop")
@@ -102,7 +98,7 @@ func release_object():
 	grabbing_camera = null
 	set_gravity_scale(1.0)
 	set_linear_damp(0.1)
-	# RE-ENABLE COLLISION when dropped
+	# Re-enable collisions on release
 	collision_layer = 1  
 	collision_mask = 1   
 
@@ -112,7 +108,17 @@ func release_object():
 		player.show_interaction_prompt("Press E to grab")
 
 func _get_player():
-	var player = get_tree().get_first_node_in_group("player")
+	if not is_inside_tree():
+		return null
+	
+	var tree = get_tree()
+	if not tree:
+		return null
+	
+	var player = tree.get_first_node_in_group("player")
 	if not player:
-		player = get_tree().get_root().find_child("FPSPlayer", true, false)
+		var root = tree.get_root()
+		if root:
+			player = root.find_child("FPSPlayer", true, false)
+	
 	return player

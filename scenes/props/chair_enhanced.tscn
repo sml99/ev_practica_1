@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://uuq50nmkcvkk"]
 
-[ext_resource type="PackedScene" uid="uid://b2ygapllm28i1" path="res://blender/chair.glb" id="1_mey7x"]
+[ext_resource type="PackedScene" uid="uid://b2ygapllm28i1" path="res://scenes/props/chair.glb" id="1_mey7x"]
 [ext_resource type="Material" uid="uid://c8o03xevbakh1" path="res://materiales/fabric_backrest.tres" id="2_fmek0"]
 [ext_resource type="Material" uid="uid://coc7oav5pkqwt" path="res://materiales/fabric_seat.tres" id="3_h601i"]
 [ext_resource type="Material" uid="uid://bt1i7m20c7k41" path="res://materiales/sub_cushion.tres" id="4_07cyu"]

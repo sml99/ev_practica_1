@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://blt22t5m5vnce"]
 
-[ext_resource type="PackedScene" uid="uid://cl8nygls2kcml" path="res://blender/nfc_pass.glb" id="1_w8hxk"]
+[ext_resource type="PackedScene" uid="uid://cl8nygls2kcml" path="res://scenes/props/nfc_pass.glb" id="1_w8hxk"]
 [ext_resource type="Script" path="res://scripts/open_door.gd" id="2_t828t"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nepn8"]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://csx11ywp1ghal"
-path="res://.godot/imported/hand_weight.glb-d467da86dcf84fc9f9b80fd7cdf828f0.scn"
+uid="uid://b2ygapllm28i1"
+path="res://.godot/imported/chair.glb-5265401be0613cae1d89bb03d8cc00a8.scn"
 
 [deps]
 
-source_file="res://blender/hand_weight.glb"
-dest_files=["res://.godot/imported/hand_weight.glb-d467da86dcf84fc9f9b80fd7cdf828f0.scn"]
+source_file="res://scenes/props/chair.glb"
+dest_files=["res://.godot/imported/chair.glb-5265401be0613cae1d89bb03d8cc00a8.scn"]
 
 [params]
 
