@@ -1,4 +1,4 @@
-# EV Practica 1 — Godot 4 project documentation
+# EV Practica — Godot 4 project documentation
 
 A small 3D environment built in Godot 4 featuring a gym/reception space with interactive props, doors, lights, and a first‑person camera rig. The project includes source Blender files, imported GLBs, ready‑to‑use scenes, and reusable scripts for common interactions.
 
