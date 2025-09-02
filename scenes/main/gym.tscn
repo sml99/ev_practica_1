@@ -376,16 +376,16 @@ offset_bottom = 40.0
 
 [node name="ControlsLabel" type="Label" parent="FPSPlayer/ControlsLabel/UI"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 94.0
-offset_right = 186.0
-offset_bottom = 221.0
+offset_left = 21.0
+offset_top = 138.0
+offset_right = 261.0
+offset_bottom = 343.0
 text = "CONTROLS:
 WASD - Move
 Mouse - Look around  
 SPACE - Jump
+SHIFT - Sprint
 TAB - Switch Camera
-E - Interact (when near objects)
 Right Click - Show/Hide Cursor
 ESC - Exit"
 
@@ -398,10 +398,10 @@ offset_bottom = 91.0
 
 [node name="InteractionLabel" type="Label" parent="FPSPlayer/ControlsLabel/UI"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 314.0
-offset_right = 66.0
-offset_bottom = 337.0
+offset_left = 24.0
+offset_top = 374.0
+offset_right = 64.0
+offset_bottom = 397.0
 label_settings = SubResource("LabelSettings_8ldx7")
 
 [node name="SurveillanceSystem" type="Node3D" parent="."]

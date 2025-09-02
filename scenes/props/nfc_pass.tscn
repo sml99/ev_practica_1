@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://blt22t5m5vnce"]
 
 [ext_resource type="PackedScene" uid="uid://cl8nygls2kcml" path="res://scenes/props/nfc_pass.glb" id="1_w8hxk"]
-[ext_resource type="Script" path="res://scripts/open_door.gd" id="2_t828t"]
+[ext_resource type="Script" path="res://scripts/interactive_door.gd" id="2_t828t"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nepn8"]
 points = PackedVector3Array(0.636672, 1.13409, 0.7683, -1, -0.998758, -1, 0.9894, -0.998758, -1, 0.990545, -1, 0.990545, -1, -0.998758, 0.9894, -1, 1.15966, -1, 0.973484, 1.00954, -0.984084, -1, 1.15966, 0.9894, 0.973483, 1.00954, 0.973483, 0.607843, 1.14113, -0.982921, 0.607842, 1.14113, 0.97232, 0.643003, 1.14448, -0.753122, 0.83917, 1.07388, -0.750162, 0.834246, 1.06808, 0.7683)

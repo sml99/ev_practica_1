@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://4kalw2qls0ga"]
 
 [ext_resource type="Material" uid="uid://dvky5rvmqatbx" path="res://materiales/door.tres" id="1_08dhn"]
-[ext_resource type="Script" path="res://scripts/door.gd" id="1_livyq"]
+[ext_resource type="Script" path="res://scripts/nfc_pass.gd" id="1_livyq"]
 [ext_resource type="Material" uid="uid://do5315xfvbojk" path="res://materiales/door_frame.tres" id="2_0pgit"]
 
 [sub_resource type="Animation" id="Animation_akt6g"]

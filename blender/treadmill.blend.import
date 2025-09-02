@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://4vi1jcu2dw7b"
-path="res://.godot/imported/treadmill.blend-d1e0d0a3b98ddde3256f0fde10b80b85.scn"
+path="res://.godot/imported/treadmill.blend-e8d8861bf28e3ffda1c91c9605632ddd.scn"
 
 [deps]
 
-source_file="res://blender/treadmill.blend"
-dest_files=["res://.godot/imported/treadmill.blend-d1e0d0a3b98ddde3256f0fde10b80b85.scn"]
+source_file="res://BLENDER/treadmill.blend"
+dest_files=["res://.godot/imported/treadmill.blend-e8d8861bf28e3ffda1c91c9605632ddd.scn"]
 
 [params]
 

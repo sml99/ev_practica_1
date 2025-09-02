@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dexdgnb73sl7u"
-path="res://.godot/imported/dumbbell_rack.blend-e67aabd61093fca29f38ba18155f0370.scn"
+path="res://.godot/imported/dumbbell_rack.blend-2923eaa1bd6eac3810615dab2f6fc377.scn"
 
 [deps]
 
-source_file="res://blender/dumbbell_rack.blend"
-dest_files=["res://.godot/imported/dumbbell_rack.blend-e67aabd61093fca29f38ba18155f0370.scn"]
+source_file="res://BLENDER/dumbbell_rack.blend"
+dest_files=["res://.godot/imported/dumbbell_rack.blend-2923eaa1bd6eac3810615dab2f6fc377.scn"]
 
 [params]
 

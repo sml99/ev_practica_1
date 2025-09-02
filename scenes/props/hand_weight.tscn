@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://dbjbyytf14bo"]
 
-[ext_resource type="Script" path="res://scripts/grabbable.gd" id="1_13s1k"]
+[ext_resource type="Script" path="res://scripts/grabbable_object.gd" id="1_13s1k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nxwr"]
 resource_name = "Material.001"

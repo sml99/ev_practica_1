@@ -29,7 +29,6 @@ func _on_input_event(camera, event, _event_position, _normal, _shape_idx):
 			if not is_grabbed:
 				if not is_player_already_carrying():
 					grab_object(camera)
-					# grabbed via mouse
 				else:
 					# blocked: already carrying
 					pass
@@ -82,11 +81,9 @@ func grab_object(camera):
 	grabbing_camera = camera
 	set_gravity_scale(0)
 	set_linear_damp(10.0)
-	# Disable collisions while grabbed
 	collision_layer = 0
 	collision_mask = 0
-
-	# Update prompt to "drop" if in range
+	
 	var player = _get_player()
 	if player and player_nearby:
 		player.show_interaction_prompt("Press E to drop")
@@ -102,8 +99,8 @@ func release_object():
 	set_gravity_scale(1.0)
 	set_linear_damp(0.1)
 	# Re-enable collisions on release
-	collision_layer = 1
-	collision_mask = 1
+	collision_layer = 1  
+	collision_mask = 1   
 
 	# Update prompt back to "grab" if still in range
 	var player = _get_player()
@@ -111,7 +108,17 @@ func release_object():
 		player.show_interaction_prompt("Press E to grab")
 
 func _get_player():
-	var player = get_tree().get_first_node_in_group("player")
+	if not is_inside_tree():
+		return null
+	
+	var tree = get_tree()
+	if not tree:
+		return null
+	
+	var player = tree.get_first_node_in_group("player")
 	if not player:
-		player = get_tree().get_root().find_child("FPSPlayer", true, false)
+		var root = tree.get_root()
+		if root:
+			player = root.find_child("FPSPlayer", true, false)
+	
 	return player

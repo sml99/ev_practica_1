@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://5gcs0aqlxnv4"
-path="res://.godot/imported/nfc_pass.blend-f95ba1dbabc2d46c49616f5107cbb911.scn"
+path="res://.godot/imported/nfc_pass.blend-db5a162b85f8d07f2be5ce4c5b7d44dc.scn"
 
 [deps]
 
-source_file="res://blender/nfc_pass.blend"
-dest_files=["res://.godot/imported/nfc_pass.blend-f95ba1dbabc2d46c49616f5107cbb911.scn"]
+source_file="res://BLENDER/nfc_pass.blend"
+dest_files=["res://.godot/imported/nfc_pass.blend-db5a162b85f8d07f2be5ce4c5b7d44dc.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://joppkei6jmdh"
-path="res://.godot/imported/hand_weight.blend-ebf4b8e3dca5698fef1fa4a476c11ff8.scn"
+path="res://.godot/imported/hand_weight.blend-2306020f9ac282b25908155380e233aa.scn"
 
 [deps]
 
-source_file="res://blender/hand_weight.blend"
-dest_files=["res://.godot/imported/hand_weight.blend-ebf4b8e3dca5698fef1fa4a476c11ff8.scn"]
+source_file="res://BLENDER/hand_weight.blend"
+dest_files=["res://.godot/imported/hand_weight.blend-2306020f9ac282b25908155380e233aa.scn"]
 
 [params]
 
